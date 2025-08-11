@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ignitech Conseil — Prévention incendie ERP </title>
+  <title>Ignitech Conseil — Prévention incendie ERP (Drôme • Ardèche)</title>
   <meta name="description" content="Ignitech Conseil : audits et conformité sécurité incendie pour ERP. Rapports clairs, références réglementaires, accompagnement commission. Basé à Saint-Péray.">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="Ignitech Conseil — Prévention incendie ERP">
-  <meta property="og:description" content="Audits & conformité ERP — Drôme, Isère, Rhône, Vaucluse.">
+  <meta property="og:description" content="Audits & conformité ERP — Drôme, Ardèche, Isère, Rhône, Vaucluse.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta name="theme-color" content="#8B0000">
@@ -107,6 +107,15 @@
       outline:none;border-color:var(--primary);
       box-shadow:0 0 0 3px rgba(139,0,0,.10)
     }
+
+    /* Cookie banner */
+    .cookiebar{
+      position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;
+      background:#ffffff;border:1px solid var(--ring);box-shadow:var(--shadow);
+      border-radius:14px;padding:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap
+    }
+    .cookiebar p{margin:0;color:var(--muted)}
+    .cookiebar .btn{box-shadow:none}
   </style>
 
   <!-- Option : redirection douce vers le domaine nu si on arrive sur www -->
@@ -136,10 +145,11 @@
   <main id="accueil" class="hero">
     <div class="container">
       <h1>Prévention incendie ERP — audits & conformité</h1>
-      <p class="lead">Cabinet basé à <strong>Saint-Péray</strong>. Interventions Drôme, Isère, Rhône, Vaucluse. Rapports clairs, <strong>références réglementaires citées</strong>, préparation et accompagnement en commission.</p>
+      <p class="lead">Cabinet basé à <strong>Saint-Péray</strong>. Interventions Drôme, Ardèche, Isère, Rhône, Vaucluse. Rapports clairs, <strong>références réglementaires citées</strong>, préparation et accompagnement en commission.</p>
       <div class="badges" aria-label="Atouts">
         <span class="badge">PRV2</span>
-       
+        <span class="badge">Adjudant-chef SPP</span>
+        <span class="badge">23 ans d’expérience</span>
         <span class="badge">Style sobre & institutionnel</span>
       </div>
       <div class="actions">
@@ -181,10 +191,10 @@
     <div class="container">
       <h2>Tarifs clairs</h2>
       <p class="sub">Forfaits indicatifs pour établissements standards. Sites complexes : devis sur mesure.</p>
-      <div class="grid grid-3">
-        <div class="card"><h3>Audit ERP <span class="tag">déplacement 50 km inclus</span></h3><div class="price">990 € HT</div><p class="muted">Rapport sous 5 jours ouvrés.</p></div>
-        <div class="card"><h3>Suivi post-audit</h3><div class="price">600 € HT</div><p class="muted">Mise en conformité guidée.</p></div>
-        <div class="card"><h3>Accessibilité</h3><div class="price">400 € HT</div><p class="muted">Diagnostic & recommandations.</p></div>
+    <div class="grid grid-3">
+        <div class="card"><h3>Audit ERP <span class="tag">déplacement 50 km inclus</span></h3><div class="price">1200 € HT</div><p class="muted">Rapport sous 5 jours ouvrés.</p></div>
+        <div class="card"><h3>Suivi post-audit</h3><div class="price">800 € HT</div><p class="muted">Mise en conformité guidée.</p></div>
+        <div class="card"><h3>Accessibilité</h3><div class="price">500 € HT</div><p class="muted">Diagnostic & recommandations.</p></div>
       </div>
       <div class="notice" style="margin-top:14px">Devis sous 24 h • Entreprises & collectivités • Facturation simple</div>
     </div>
@@ -205,7 +215,7 @@
   <section id="zone" style="background:var(--bg-alt)">
     <div class="container">
       <h2>Zone d’intervention</h2>
-      <p class="sub">Basé à Saint-Péray. Drôme, Isère, Rhône, Vaucluse — autres départements sur devis.</p>
+      <p class="sub">Basé à Saint-Péray. Drôme, Ardèche, Isère, Rhône, Vaucluse — autres départements sur devis.</p>
     </div>
   </section>
 
@@ -272,15 +282,44 @@
         <p class="tiny">© <span id="year"></span> Ignitech Conseil — Tous droits réservés.</p>
       </div>
       <div>
-        <strong>Accessibilité</strong>
-        <p class="tiny">Contenus lisibles, contrastes renforcés, navigation au clavier. Pour tout signalement : <a href="mailto:contact@ignitech-conseil.fr?subject=Accessibilite%20Ignitech%20Conseil">écrivez-nous</a>.</p>
+        <strong>Données & confidentialité</strong>
+        <p class="tiny">
+          Ce site ne dépose aucun cookie de suivi. Un cookie/stockage local strictement nécessaire peut être utilisé pour masquer ce bandeau.
+          Les données envoyées via le formulaire sont transmises par e-mail à Ignitech Conseil et utilisées uniquement pour répondre à votre demande.
+          Durées de conservation : le temps du traitement et au plus 24 mois en archivage mail. Droits RGPD (accès, rectification, effacement, opposition) : écrivez à
+          <a href="mailto:contact@ignitech-conseil.fr">contact@ignitech-conseil.fr</a>. Dernière mise à jour : 11/08/2025.
+        </p>
       </div>
     </div>
   </footer>
 
+  <!-- Cookie/RGPD banner -->
+  <div id="cookiebar" class="cookiebar" role="dialog" aria-live="polite" aria-label="Information cookies" style="display:none">
+    <p>Nous n’utilisons pas de cookies de suivi. En poursuivant, vous acceptez le stockage local strictement nécessaire pour masquer ce message. <a href="#mentions">En savoir plus</a>.</p>
+    <div class="actions">
+      <button id="cookie-ok" class="btn btn-primary" type="button">OK</button>
+    </div>
+  </div>
+
   <script>
     // année courante
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Cookie/RGPD banner logic (localStorage)
+    (function(){
+      try{
+        var key = 'ignitechConsent';
+        if(!localStorage.getItem(key)){
+          var el = document.getElementById('cookiebar');
+          if(el) el.style.display = 'flex';
+        }
+        document.getElementById('cookie-ok').addEventListener('click', function(){
+          try{ localStorage.setItem(key, '1'); }catch(e){}
+          var el = document.getElementById('cookiebar');
+          if(el) el.style.display = 'none';
+        });
+      }catch(e){ /* no-op */ }
+    })();
   </script>
 </body>
 </html>
