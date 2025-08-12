@@ -3,37 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ignitech Conseil — Audit sécurité incendie ERP Drôme · Ardèche</title>
-<meta name="description" content="Préventionniste PRV2. Audits sécurité incendie pour ERP (Drôme, Isère, Rhône, Vaucluse). Conformité réglementaire, plan d’action, accompagnement en commission. Appel découverte 15 min offert.">
+<title>Ignitech Conseil — Audit sécurité incendie ERP · Drôme · Isère · Rhône · Vaucluse</title>
+<meta name="description" content="Préventionniste PRV2. Audits sécurité incendie pour ERP (Drôme, Isère, Rhône, Vaucluse). Conformité réglementaire, plan d’action, accompagnement commission. Appel découverte 15 min offert.">
 <meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ctext y='50' x='6' font-size='50'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E">
 
-<!-- Open Graph / Twitter (facultatif : remplace l'URL image quand tu en auras une) -->
-<meta property="og:title" content="Ignitech Conseil — Audit sécurité incendie ERP >
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="Ignitech Conseil — Audit sécurité incendie ERP">
 <meta property="og:description" content="Conformité réglementaire, sérénité d’exploitation et accompagnement terrain.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ignitech-conseil.fr/">
-<meta property="og:image" content="https://ignitech-conseil.fr/og.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://source.unsplash.com/1200x630/?fire,extinguisher">
 
 <!-- Styles inline : sobre & institutionnel -->
 <style>
 :root{
-  --bg:#0f172a;          /* bleu nuit */
-  --text:#0b1220;
-  --muted:#5b6b86;
-  --primary:#2563eb;     /* bleu action */
-  --primary-ink:#ffffff;
-  --surface:#ffffff;
-  --soft:#f1f5f9;        /* gris clair */
-  --ring:rgba(37,99,235,.35);
-  --ok:#16a34a; --warn:#f59e0b; --danger:#dc2626;
+  --bg:#0f172a; --text:#0b1220; --muted:#5b6b86; --primary:#2563eb; --ink:#fff;
+  --surface:#fff; --soft:#f1f5f9; --ring:rgba(37,99,235,.35);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-  color:var(--text); background:#fff;
-}
+body{margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--text); background:#fff}
 a{color:var(--primary); text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:1100px; margin-inline:auto; padding:0 20px}
@@ -45,44 +35,31 @@ h3{font-size:clamp(18px,2.2vw,22px)}
 p{margin:0 0 1rem}
 
 /* Header */
-header{
-  position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6px);
-  background:rgba(255,255,255,.9); border-bottom:1px solid #e5e7eb;
-}
+header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6px); background:rgba(255,255,255,.9); border-bottom:1px solid #e5e7eb}
 .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:64px}
 .brand{display:flex; flex-direction:column}
 .brand b{font-size:18px; letter-spacing:.2px}
 .brand span{font-size:12px; color:var(--muted)}
 .menu{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-  background:var(--primary); color:var(--primary-ink); border-radius:12px;
-  padding:10px 16px; font-weight:600; border:1px solid transparent;
-  box-shadow:0 8px 20px -10px var(--ring);
-}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:var(--primary); color:var(--ink); border-radius:12px; padding:10px 16px; font-weight:600; border:1px solid transparent; box-shadow:0 8px 20px -10px var(--ring)}
 .btn:hover{filter:brightness(.96); text-decoration:none}
 .btn.outline{background:#fff; color:var(--primary); border-color:var(--primary)}
 .badge{display:inline-block; background:#e8eefc; color:#1e3a8a; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700}
 
 /* Hero */
-.hero{
-  background:linear-gradient(180deg,#f8fafc 0,#fff 100%);
-  padding:72px 0 40px; border-bottom:1px solid #eef2f7;
-}
-.hero h1{letter-spacing:.2px}
+.hero{background:linear-gradient(180deg,#f8fafc 0,#fff 100%); padding:72px 0 28px; border-bottom:1px solid #eef2f7}
 .lead{color:var(--muted); font-size:18px}
 .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+.hero-img{margin-top:18px; border-radius:18px; width:100%; height:auto; display:block; border:1px solid #e5e7eb; box-shadow:0 10px 30px -20px rgba(15,23,42,.25)}
 
 /* Grids & cards */
 .grid{display:grid; gap:18px}
-.grid.cols-3{grid-template-columns:repeat(3,1fr)}
 .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-@media(max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-.card{
-  background:var(--surface); border:1px solid #e5e7eb; border-radius:16px; padding:18px;
-  box-shadow:0 10px 30px -20px rgba(15,23,42,.25);
-}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid.cols-4{grid-template-columns:repeat(2,1fr)} .grid.cols-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.grid.cols-4,.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+.card{background:var(--surface); border:1px solid #e5e7eb; border-radius:16px; padding:18px; box-shadow:0 10px 30px -20px rgba(15,23,42,.25)}
 .card h3{margin-bottom:.25rem}
 .muted{color:var(--muted)}
 .kpis{display:flex; gap:18px; flex-wrap:wrap}
@@ -96,17 +73,15 @@ header{
 
 /* Testimonials */
 .quote{font-style:italic}
-.avatar{width:40px; height:40px; border-radius:999px; background:var(--soft); display:inline-block; margin-right:10px}
+.avatar{width:40px; height:40px; border-radius:999px; background:var(--soft); display:inline-block; margin-right:10px; background-size:cover; background-position:center}
 
-/* Target audience pills */
+/* Pills */
 .pills{display:flex; gap:8px; flex-wrap:wrap}
 .pill{background:#eef2ff; color:#3730a3; padding:8px 12px; border-radius:999px; font-weight:600; font-size:13px}
 
 /* Form */
 form{display:grid; gap:12px}
-input,select,textarea{
-  width:100%; padding:12px 12px; border:1px solid #dbe2ea; border-radius:12px; font:inherit; background:#fff;
-}
+input,select,textarea{width:100%; padding:12px 12px; border:1px solid #dbe2ea; border-radius:12px; font:inherit; background:#fff}
 input:focus,select:focus,textarea:focus{outline:3px solid var(--ring); border-color:var(--primary)}
 label{font-weight:600}
 .checks{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
@@ -120,35 +95,35 @@ footer a{color:#c8d3ea}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr}}
 
 /* Sticky mobile CTA */
-.sticky-cta{
-  position:fixed; inset:auto 16px 16px 16px; display:none; z-index:60;
-}
+.sticky-cta{position:fixed; inset:auto 16px 16px 16px; display:none; z-index:60}
 @media(max-width:700px){.sticky-cta{display:block}}
-/* Small helpers */
 .icon{width:22px; height:22px; vertical-align:-4px}
 .sep{height:1px; background:#eef2f7; margin:28px 0}
 .small{font-size:13px}
+.img-card{overflow:hidden; padding:0}
+.img-card img{display:block; width:100%; height:220px; object-fit:cover}
+.blog-card .meta{font-size:12px; color:var(--muted)}
 </style>
 
-<!-- JSON-LD LocalBusiness -->
+<!-- JSON-LD ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"ProfessionalService",
   "name":"Ignitech Conseil",
-  "description":"Audit sécurité incendie pour ERP : diagnostic, plan d'action, accompagnement en commission.",
+  "description":"Audit sécurité incendie pour ERP : diagnostic, plan d'action, accompagnement commission.",
   "areaServed":["Drôme","Isère","Rhône","Vaucluse"],
   "url":"https://ignitech-conseil.fr/",
   "telephone":"+33613620503",
   "email":"contact@ignitech-conseil.fr",
+  "taxID":"895023505",
   "address":{
     "@type":"PostalAddress",
     "streetAddress":"34 rue de l’Équerre",
     "postalCode":"07130",
     "addressLocality":"Saint-Péray",
     "addressCountry":"FR"
-  },
-  "sameAs":[]
+  }
 }
 </script>
 </head>
@@ -158,14 +133,14 @@ footer a{color:#c8d3ea}
   <div class="container nav" role="navigation" aria-label="Navigation principale">
     <div class="brand">
       <b>Ignitech Conseil</b>
-      <span>Préventionniste ERP · </span>
+      <span>Préventionniste ERP · Drôme • Isère • Rhône • Vaucluse</span>
     </div>
     <nav class="menu">
       <a href="#prestations">Prestations</a>
       <a href="#offres">Offres</a>
       <a href="#temoignages">Témoignages</a>
       <a href="#zones">Zone d’intervention</a>
-      <a href="#mini-audit" class="btn outline">Mini-audit en ligne</a>
+      <a href="#blog" class="btn outline">Blog</a>
       <a href="#contact" class="btn">Appel 15 min offert</a>
     </nav>
   </div>
@@ -180,6 +155,7 @@ footer a{color:#c8d3ea}
       <a href="#offres" class="btn">Découvrir l’offre « Audit + Suivi »</a>
       <a href="#prestations" class="btn outline">Voir toutes les prestations</a>
     </div>
+    <img class="hero-img" src="https://source.unsplash.com/1200x520/?fire%20safety,alarm" alt="Contrôle d'un système de sécurité incendie">
     <div class="kpis" style="margin-top:20px">
       <div class="kpi"><b>20+ ans</b><br><span class="muted">d’expérience terrain</span></div>
       <div class="kpi"><b>48 h</b><br><span class="muted">pour un retour d’audit* (selon charge)</span></div>
@@ -192,7 +168,6 @@ footer a{color:#c8d3ea}
   <div class="container grid cols-3">
     <div class="card">
       <h3>
-        <!-- Bouclier -->
         <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3.4 9.7-7 11-3.6-1.3-7-6-7-11V5l7-3zM7 8.6V11c0 3.8 2.6 7.7 5 9 2.4-1.3 5-5.2 5-9V8.6L12 6.4 7 8.6z"/></svg>
         Sécurité accrue
       </h3>
@@ -200,7 +175,6 @@ footer a{color:#c8d3ea}
     </div>
     <div class="card">
       <h3>
-        <!-- Check -->
         <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"/></svg>
         Conformité garantie
       </h3>
@@ -208,7 +182,6 @@ footer a{color:#c8d3ea}
     </div>
     <div class="card">
       <h3>
-        <!-- Smile -->
         <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm0 18a8 8 0 118-8 8.009 8.009 0 01-8 8zm-4-7h2v2H8zm6 0h2v2h-2zm-6.07 4.07a5.5 5.5 0 008.14 0l1.41 1.41a7.5 7.5 0 01-11 0z"/></svg>
         Tranquillité d’esprit
       </h3>
@@ -221,6 +194,7 @@ footer a{color:#c8d3ea}
   <div class="container">
     <h2>Prestations</h2>
     <p class="muted">Claires, actionnables et orientées résultats.</p>
+
     <div class="grid cols-3" style="margin-top:16px">
       <div class="card">
         <h3>Audit ERP complet</h3>
@@ -239,7 +213,9 @@ footer a{color:#c8d3ea}
         <p>Procédures d’évacuation (MS 51), organisation interne, registres et vérifications périodiques, sensibilisation du personnel.</p>
       </div>
     </div>
+
     <div class="sep"></div>
+
     <div class="grid cols-3">
       <div class="card">
         <h3>Dossiers spécifiques</h3>
@@ -253,6 +229,12 @@ footer a{color:#c8d3ea}
         <h3>Audit flash</h3>
         <p>Visite ciblée 2–3 h, priorisation des écarts, feuille de route express (utile avant travaux ou commission proche).</p>
       </div>
+    </div>
+
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card img-card"><img loading="lazy" src="https://source.unsplash.com/800x600/?evacuation,plan" alt="Plan d’évacuation en ERP"></div>
+      <div class="card img-card"><img loading="lazy" src="https://source.unsplash.com/800x600/?fire,extinguisher" alt="Vérification des extincteurs"></div>
+      <div class="card img-card"><img loading="lazy" src="https://source.unsplash.com/800x600/?fire,alarm" alt="Système d’alarme incendie"></div>
     </div>
   </div>
 </section>
@@ -276,7 +258,7 @@ footer a{color:#c8d3ea}
       </div>
       <div class="card" style="border-color:#c7d2fe">
         <h3>Pack Audit + Suivi</h3>
-        <p class="price">1 900 € HT <span class="muted small">au lieu de 2 000 €</span></p>
+        <p class="price">1 790 € HT <span class="muted small">au lieu de 2 000 €</span></p>
         <ul>
           <li>Audit complet</li>
           <li>+ Suivi de mise en conformité</li>
@@ -299,7 +281,7 @@ footer a{color:#c8d3ea}
         </div>
       </div>
     </div>
-    <p class="help">Tarifs indicatifs micro-entreprise — TVA non applicable, art. 293 B du CGI.</p>
+    <p class="help">Tarifs indicatifs — Micro-entreprise, TVA non applicable (art. 293 B du CGI).</p>
   </div>
 </section>
 
@@ -329,11 +311,11 @@ footer a{color:#c8d3ea}
     <div class="grid cols-2" style="margin-top:16px">
       <div class="card">
         <div class="quote">« Rapport clair, actions faisables, passage en commission sans stress. »</div>
-        <div class="small muted" style="margin-top:8px"><span class="avatar"></span>Directrice, École primaire (Type R)</div>
+        <div class="small muted" style="margin-top:8px"><span class="avatar" style="background-image:url('https://source.unsplash.com/80x80/?portrait,woman')"></span>Directrice, École primaire (Type R)</div>
       </div>
       <div class="card">
         <div class="quote">« Le pack Audit + Suivi nous a fait gagner du temps et éviter des coûts inutiles. »</div>
-        <div class="small muted" style="margin-top:8px"><span class="avatar"></span>Gérant, Restaurant (Type N)</div>
+        <div class="small muted" style="margin-top:8px"><span class="avatar" style="background-image:url('https://source.unsplash.com/80x80/?portrait,man')"></span>Gérant, Restaurant (Type N)</div>
       </div>
     </div>
   </div>
@@ -378,7 +360,7 @@ footer a{color:#c8d3ea}
             <option>Type M (Magasin)</option>
             <option>Type N (Restauration)</option>
             <option>Type L (Salle)</option>
-            <option>Type R (Établissement d’enseignement)</option>
+            <option>Type R (Enseignement)</option>
             <option>Autre / à préciser</option>
           </select>
         </div>
@@ -411,11 +393,12 @@ footer a{color:#c8d3ea}
 <section id="zones" class="section" style="background:#fafbff">
   <div class="container">
     <h2>Zone d’intervention</h2>
-    <p class="muted">. Déplacements réguliers en :</p>
-    <div class="grid cols-3" style="margin-top:14px">
+    <p class="muted">Basé à Saint-Péray (07). Intervention sur les départements :</p>
+    <div class="grid cols-4" style="margin-top:14px">
       <div class="card"><b>Drôme (26)</b><br><span class="muted small">Valence, Romans, Montélimar…</span></div>
-      
-      <div class="card"><b>Isère · Rhône · Vaucluse</b><br><span class="muted small">Vienne, Lyon, Orange…</span></div>
+      <div class="card"><b>Isère (38)</b><br><span class="muted small">Vienne, Grenoble, Voiron…</span></div>
+      <div class="card"><b>Rhône (69)</b><br><span class="muted small">Lyon, Villeurbanne, Oullins…</span></div>
+      <div class="card"><b>Vaucluse (84)</b><br><span class="muted small">Orange, Avignon, Carpentras…</span></div>
     </div>
   </div>
 </section>
@@ -444,6 +427,37 @@ footer a{color:#c8d3ea}
   </div>
 </section>
 
+<!-- Blog -->
+<section id="blog" class="section" style="background:linear-gradient(180deg,#fff 0,#f8fafc 100%)">
+  <div class="container">
+    <h2>Blog & guides pratiques</h2>
+    <p class="muted">Ressources pour responsables d’ERP et collectivités — pédagogiques, actionnables et à jour.</p>
+    <div class="grid cols-3" style="margin-top:16px">
+      <article class="card blog-card">
+        <img loading="lazy" class="hero-img" src="https://source.unsplash.com/800x500/?emergency,exit" alt="Sortie de secours et balisage">
+        <h3 style="margin-top:10px">Les 7 erreurs qui coûtent cher en commission de sécurité</h3>
+        <div class="meta">Lecture 5 min • Check-lists</div>
+        <p class="small">Dossiers incomplets, essais non faits, plans non conformes… Voici comment les éviter et gagner en crédibilité devant la commission.</p>
+        <a class="btn outline" href="#contact">Obtenir la check-list</a>
+      </article>
+      <article class="card blog-card">
+        <img loading="lazy" class="hero-img" src="https://source.unsplash.com/800x500/?inspection,clipboard" alt="Vérifications réglementaires en ERP">
+        <h3 style="margin-top:10px">Vérifications annuelles en ERP (1er groupe) — le guide clair</h3>
+        <div class="meta">Lecture 6 min • Réglementation</div>
+        <p class="small">Qui fait quoi ? À quelle périodicité ? Un mémo simple pour ne rien rater (électricité, SSI, éclairage, extincteurs, gaz...).</p>
+        <a class="btn outline" href="#contact">Recevoir le mémo</a>
+      </article>
+      <article class="card blog-card">
+        <img loading="lazy" class="hero-img" src="https://source.unsplash.com/800x500/?blueprint,architecture" alt="Dossier SSI prêt pour la commission">
+        <h3 style="margin-top:10px">Monter un dossier SSI « prêt commission »</h3>
+        <div class="meta">Lecture 7 min • Méthode</div>
+        <p class="small">Structure, pièces à joindre, points d’attention et erreurs fréquentes : la trame qui fait gagner du temps à tout le monde.</p>
+        <a class="btn outline" href="#contact">Demander la trame</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="section" style="background:linear-gradient(180deg,#f8fafc 0,#fff 100%)">
   <div class="container">
     <h2>Contact</h2>
@@ -454,7 +468,7 @@ footer a{color:#c8d3ea}
         34 rue de l’Équerre, 07130 Saint-Péray<br>
         <a href="tel:+33613620503">06 13 62 05 03</a><br>
         <a href="mailto:contact@ignitech-conseil.fr">contact@ignitech-conseil.fr</a></p>
-        <p class="small muted">Micro-entreprise — TVA non applicable, art. 293 B du CGI.</p>
+        <p class="small muted">Micro-entreprise — TVA non applicable (art. 293 B du CGI).</p>
         <div class="cta-row" style="margin-top:10px">
           <a class="btn" href="tel:+33613620503">Appeler maintenant</a>
           <a class="btn outline" href="mailto:contact@ignitech-conseil.fr?subject=Demande%20d%27audit%20ERP">Écrire un email</a>
@@ -510,9 +524,9 @@ footer a{color:#c8d3ea}
 <section id="mentions" class="section">
   <div class="container">
     <h2>Mentions légales</h2>
-    <p class="small muted">Éditeur : Ignitech Conseil — 34 rue de l’Équerre, 07130 Saint-Péray — contact@ignitech-conseil.fr — 06 13 62 05 03.<br>
+    <p class="small muted">Éditeur : Ignitech Conseil — 34 rue de l’Équerre, 07130 Saint-Péray — SIREN : 895023505 — contact@ignitech-conseil.fr — 06 13 62 05 03.<br>
     Hébergement : GitHub Pages. <br>
-    <em>Renseigner SIREN dès attribution (facultatif sur la page publique).</em></p>
+    <em>Les informations tarifaires sont indicatives.</em></p>
   </div>
 </section>
 <section id="confidentialite" class="section" style="padding-top:0">
@@ -525,7 +539,7 @@ footer a{color:#c8d3ea}
 <!-- Sticky mobile CTA -->
 <a class="sticky-cta btn" href="tel:+33613620503">Appeler Ignitech Conseil</a>
 
-<!-- JS minimal : année dynamique + envoi des formulaires par mailto + mini helpers -->
+<!-- JS minimal : année dynamique + mailto -->
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
 
@@ -554,7 +568,6 @@ ${besoin}
 
 (Envoyé depuis ignitech-conseil.fr)`
   );
-
   window.location.href = `mailto:contact@ignitech-conseil.fr?subject=${subject}&body=${body}`;
 });
 
@@ -579,4 +592,3 @@ ${msg}
 </script>
 </body>
 </html>
-
