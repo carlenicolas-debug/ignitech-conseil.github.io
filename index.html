@@ -42,7 +42,7 @@ header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6
 .hero{background:linear-gradient(180deg,#f8fafc 0,#fff 100%); padding:72px 0 28px; border-bottom:1px solid #eef2f7}
 .lead{color:var(--muted); font-size:18px}
 .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-.hero-visual{margin-top:18px; border-radius:18px; overflow:hidden; border:1px solid #e5e7eb; box-shadow:0 10px 30px -20px rgba(15,23,42,.25)}
+.hero-img{margin-top:18px; border-radius:18px; width:100%; height:auto; display:block; border:1px solid #e5e7eb; box-shadow:0 10px 30px -20px rgba(15,23,42,.25)}
 
 /* Grids & cards */
 .grid{display:grid; gap:18px}
@@ -93,10 +93,9 @@ footer a{color:#c8d3ea}
 .icon{width:22px; height:22px; vertical-align:-4px}
 .sep{height:1px; background:#eef2f7; margin:28px 0}
 .small{font-size:13px}
-
-/* SVG "photos" */
-.svg-photo{display:block; width:100%; height:auto}
-.svg-thumb{display:block; width:100%; height:220px}
+.img-card{overflow:hidden; padding:0}
+.img-card img{display:block; width:100%; height:220px; object-fit:cover}
+.blog-card .meta{font-size:12px; color:var(--muted)}
 </style>
 
 <!-- JSON-LD ProfessionalService -->
@@ -150,49 +149,9 @@ footer a{color:#c8d3ea}
       <a href="#prestations" class="btn outline">Voir toutes les prestations</a>
     </div>
 
-    <!-- Illustration hero 100% inline -->
-    <div class="hero-visual" aria-label="Illustration sécurité incendie">
-      <svg class="svg-photo" viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg" role="img">
-        <defs>
-          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#e2e8f0"/>
-            <stop offset="1" stop-color="#f8fafc"/>
-          </linearGradient>
-          <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#2563eb"/>
-            <stop offset="1" stop-color="#1e40af"/>
-          </linearGradient>
-          <filter id="soft"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity=".2"/></filter>
-        </defs>
-        <rect width="1200" height="520" fill="url(#g1)"/>
-        <!-- Plan d'évacuation stylisé -->
-        <g transform="translate(60,60)" filter="url(#soft)">
-          <rect width="520" height="360" rx="18" fill="#ffffff" stroke="#d1d5db"/>
-          <rect x="30" y="40" width="180" height="12" rx="6" fill="#94a3b8"/>
-          <rect x="30" y="70" width="300" height="10" rx="5" fill="#cbd5e1"/>
-          <rect x="30" y="95" width="360" height="10" rx="5" fill="#cbd5e1"/>
-          <rect x="30" y="170" width="420" height="160" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
-          <path d="M60 200 h120 v40 h-60 v50 h-60 z" fill="#e0f2fe" stroke="#93c5fd"/>
-          <circle cx="430" cy="197" r="8" fill="#ef4444"/>
-          <path d="M430 197 l-40 40" stroke="#ef4444" stroke-width="4"/>
-          <text x="30" y="150" font-size="14" fill="#64748b">Plan d’évacuation — zones & itinéraires</text>
-        </g>
-        <!-- Extincteur stylisé -->
-        <g transform="translate(750,120)" filter="url(#soft)">
-          <rect x="0" y="0" width="300" height="300" rx="22" fill="#ffffff" stroke="#d1d5db"/>
-          <g transform="translate(80,40)">
-            <rect x="34" y="64" width="72" height="140" rx="16" fill="#ef4444"/>
-            <rect x="28" y="40" width="84" height="24" rx="8" fill="#f87171"/>
-            <rect x="16" y="16" width="110" height="12" rx="6" fill="#1f2937"/>
-            <path d="M126 22 q34 -8 34 18 v40" stroke="#1f2937" stroke-width="10" fill="none"/>
-            <circle cx="70" cy="140" r="22" fill="#fee2e2"/>
-          </g>
-        </g>
-        <!-- Bande bleue -->
-        <rect x="0" y="460" width="1200" height="60" fill="url(#g2)"/>
-        <text x="40" y="498" font-size="18" fill="#ffffff" font-weight="700">Audits · Plans d’action · Préparation commission</text>
-      </svg>
-    </div>
+    <!-- HERO: image base64 -->
+    <img class="hero-img" alt="Illustration sécurité incendie"
+         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMjAwJyBoZWlnaHQ9JzUyMCcgdmlld0JveD0nMCAwIDEyMDAgNTIwJz4KPGRlZnM+CiAgPGxpbmVhckdyYWRpZW50IGlkPSdnMScgeDE9JzAnIHgyPScxJyB5MT0nMCcgeTI9JzEnPgogICAgPHN0b3Agb2Zmc2V0PScwJyBzdG9wLWNvbG9yPScjZTJlOGYwJz8vPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjZjhmYWZjJz8vPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGxpbmVhckdyYWRpZW50IGlkPSdnMicgeDE9JzAnIHgyPScxJyB5MT0nMCcgeTI9JzEnPgogICAgPHN0b3Agb2Zmc2V0PScwJyBzdG9wLWNvbG9yPScjMjU2M2ViJz8vPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMWU0MGFmJz8vPgogIDwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9JzEyMDAnIGhlaWdodD0nNTIwJyBmaWxsPSd1cmwoI2cxKScvPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSg2MCw2MCknPgo8cmVjdCB3aWR0aD0nNTIwJyBoZWlnaHQ9JzM2MCcgcng9JzE4JyBmaWxsPScjZmZmZmZmJyBzdHJva2U9JyNkMWQ1ZGInLz4KPHJlY3QgeD0nMzAnIHk9JzQwJyB3aWR0aD0nMTgwJyBoZWlnaHQ9JzEyJyByeD0nNicgZmlsbD0nIzk0YTNiOCcvPgo8cmVjdCB4PSczMCcgeT0nNzAnIHdpZHRoPSczMDAnIGhlaWdodD0nMTAnIHJ4PSc1JyBmaWxsPScjY2JkNWUxJy8+CjxyZWN0IHg9JzMwJyB5PSc5NScgd2lkdGg9JzM2MCcgaGVpZ2h0PScxMCcgcng9JzUnIGZpbGw9JyNjYmQ1ZTEnLz4KPHJlY3QgeD0nMzAnIHk9JzE3MCcgd2lkdGg9JzQyMCcgaGVpZ2h0PScxNjAnIHJ4PScxMCcgZmlsbD0nI2YxZjVmOScgc3Ryb2tlPScjZTJlOGYwJy8+CjxwYXRoIGQ9J002MCAyMDAgaDEyMCB2NDAgaC02MCB2NTAgaC02MCB6JyBmaWxsPScjZTBmMmZlJyBzdHJva2U9JyM5M2M1ZmQnLz4KPGNpcmNsZSBjeD0nNDMwJyBjeT0nMTk3JyByPSc4JyBmaWxsPScjZWY0NDQ0Jy8+CjxwYXRoIGQ9JzQzMCAxOTcgbC00MCA0MCcgc3Ryb2tlPScjZWY0NDQ0JyBzdHJva2Utd2lkdGg9JzQnLz4KPHRleHQgeD0nMzAnIHk9JzE1MCcgZm9udC1zaXplPScxNCcgZmlsbD0nI2Y0NzQ4Yic+UGxhbiBkw6l2YWN1YXRpb24g4oCUIHpvbmVzICYgaXRpbsOqdGFpcmVzPC90ZXh0Pgo8L2c+CjxnIHRyYW5zZm9ybT0ndHJhbnNsYXRlKDc1MCwxMjApJz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzMwMCcgaGVpZ2h0PSczMDAnIHJ4PScyMicgZmlsbD0nI2ZmZmZmZicgc3Ryb2tlPScjZDFkNWRiJy8+CjxnIHRyYW5zZm9ybT0ndHJhbnNsYXRlKDgwLDQwKSc+CiAgPHJlY3QgeD0nMzQnIHk9JzY0JyB3aWR0aD0nNzInIGhlaWdodD0nMTQwJyByeD0nMTYnIGZpbGw9JyNlZjQ0NDQnLz4KICA8cmVjdCB4PScyOCcgeT0nNDAnIHdpZHRoPSc4NCcgaGVpZ2h0PScyNCcgcng9JzgnIGZpbGw9JyNmODcxNzEnLz4KICA8cmVjdCB4PScxNicgeT0nMTYnIHdpZHRoPScxMTAnIGhlaWdodD0nMTInIHJ4PSc2JyBmaWxsPScjMWYyOTM3Jy8+CiAgPHBhdGggZD0nTTEyNiAyMiBxMzQgLTggMzQgMTggdjQwJyBzdHJva2U9JyMxZjI5MzcnIHN0cm9rZS13aWR0aD0nMTAnIGZpbGw9J25vbmUnLz4KICA8Y2lyY2xlIGN4PSc3MCcgY3k9JzE0MCcgcj0nMjInIGZpbGw9JyNmZWUyZTInLz4KPC9nPgo8L2c+CjxyZWN0IHg9JzAnIHk9JzQ2MCcgd2lkdGg9JzEyMDAnIGhlaWdodD0nNjAnIGZpbGw9J3VybCgjZzIpJy8+Cjx0ZXh0IHg9JzQwJyB5PSc0OTgnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9JyNmZmYnIGZvbnQtd2VpZ2h0PSc3MDAnPkF1ZGl0cyDigJMgUGxhbnMgZOKAmWFjdGlvbiDigJMgUHLDqXBhcmF0aW9uIGNvbW1pc3Npb248L3RleHQ+Cjwvc3ZnPg==" />
 
     <div class="kpis" style="margin-top:20px">
       <div class="kpi"><b>20+ ans</b><br><span class="muted">d’expérience terrain</span></div>
@@ -254,56 +213,15 @@ footer a{color:#c8d3ea}
 
     <div class="sep"></div>
 
-    <div class="grid cols-3">
-      <!-- "Photos" inline SVG thématiques -->
-      <div class="card" style="padding:0">
-        <svg class="svg-thumb" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan d’évacuation en ERP">
-          <defs><linearGradient id="p1" x1="0" x2="1"><stop offset="0" stop-color="#eff6ff"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient></defs>
-          <rect width="800" height="220" fill="url(#p1)"/>
-          <rect x="40" y="30" width="300" height="160" rx="14" fill="#fff" stroke="#cbd5e1"/>
-          <rect x="60" y="55" width="200" height="10" rx="5" fill="#94a3b8"/>
-          <rect x="60" y="80" width="240" height="8" rx="4" fill="#cbd5e1"/>
-          <rect x="60" y="100" width="260" height="8" rx="4" fill="#cbd5e1"/>
-          <path d="M90 130h80v35h-40v30H90z" fill="#e0f2fe" stroke="#93c5fd"/>
-          <circle cx="320" cy="120" r="6" fill="#ef4444"/>
-          <path d="M320 120 l-30 30" stroke="#ef4444" stroke-width="4"/>
-        </svg>
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card img-card">
+        <img alt="Plan d’évacuation en ERP" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nMjIwJyB2aWV3Qm94PScwIDAgODAwIDIyMCc+CiA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J3AxJyB4MT0nMCcgeDI9JzEnPjxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nI2VmZjZmZicvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nI2UwZjJmZScvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PScyMjAnIGZpbGw9J3VybCgjcDEpJy8+CiA8cmVjdCB4PSc0MCcgeT0nMzAnIHdpZHRoPSczMDAnIGhlaWdodD0nMTYwJyByeD0nMTQnIGZpbGw9JyNmZmYnIHN0cm9rZT0nI2NiZDVlMScvPgogPHJlY3QgeD0nNjAnIHk9JzU1JyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzEwJyByeD0nNScgZmlsbD0nIzk0YTNiOCcvPgogPHJlY3QgeD0nNjAnIHk9JzgwJyB3aWR0aD0nMjQwJyBoZWlnaHQ9JzgnIHJ4PSc0JyBmaWxsPScjY2JkNWUxJy8+CiA8cmVjdCB4PSc2MCcgeT0nMTAwJyB3aWR0aD0nMjYwJyBoZWlnaHQ9JzgnIHJ4PSc0JyBmaWxsPScjY2JkNWUxJy8+CiA8cGF0aCBkPSdNOTAgMTMwaDgwdjM1aC00MHYzMEg5MHonIGZpbGw9JyNlMGYyZmUnIHN0cm9rZT0nIzkzYzVmZCcvPgogPGNpcmNsZSBjeD0nMzIwJyBjeT0nMTIwJyByPSc2JyBmaWxsPScjZWY0NDQ0Jy8+CiA8cGF0aCBkPSdNMzIwIDEyMCBsLTMwIDMwJyBzdHJva2U9JyNlZjQ0NDQnIHN0cm9rZS13aWR0aD0nNCcvPgo8L3N2Zz4=" />
       </div>
-      <div class="card" style="padding:0">
-        <svg class="svg-thumb" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vérification des extincteurs">
-          <defs><linearGradient id="p2" x1="0" x2="1"><stop offset="0" stop-color="#fee2e2"/><stop offset="1" stop-color="#fecaca"/></linearGradient></defs>
-          <rect width="800" height="220" fill="url(#p2)"/>
-          <g transform="translate(340,30)">
-            <rect x="34" y="64" width="72" height="110" rx="16" fill="#ef4444"/>
-            <rect x="28" y="44" width="84" height="20" rx="8" fill="#f87171"/>
-            <rect x="16" y="22" width="110" height="10" rx="5" fill="#111827"/>
-            <path d="M126 27 q34 -6 34 16 v34" stroke="#111827" stroke-width="8" fill="none"/>
-            <circle cx="70" cy="120" r="20" fill="#fee2e2"/>
-          </g>
-        </svg>
+      <div class="card img-card">
+        <img alt="Vérification des extincteurs" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nMjIwJyB2aWV3Qm94PScwIDAgODAwIDIyMCc+CiA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J3AyJyB4MT0nMCcgeDI9JzEnPjxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nI2ZlZTJlMicvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nI2ZlY2FjYScvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PScyMjAnIGZpbGw9J3VybCgjcDIpJy8+CiA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgzNDAsMzApJz4KICA8cmVjdCB4PSczNCcgeT0nNjQnIHdpZHRoPSc3MicgaGVpZ2h0PScxMTAnIHJ4PScxNicgZmlsbD0nI2VmNDQ0NCcvPgogIDxyZWN0IHg9JzI4JyB5PSc0NCcgd2lkdGg9Jzg0JyBoZWlnaHQ9JzIwJyByeD0nOCcgZmlsbD0nI2Y4NzE3MScvPgogIDxyZWN0IHg9JzE2JyB5PScyMicgd2lkdGg9JzExMCcgaGVpZ2h0PScxMCcgcng9JzUnIGZpbGw9JyMxMTE4MjcnLz4KICA8cGF0aCBkPSdNMTI2IDI3IHEzNCAtNiAzNCAxNiB2MzQnIHN0cm9rZT0nIzExMTgyNycgc3Ryb2tlLXdpZHRoPSc4JyBmaWxsPSdub25lJy8+CiAgPGNpcmNsZSBjeD0nNzAnIGN5PScxMjAnIHI9JzIwJyBmaWxsPScjZmVlMmUyJy8+CiA8L2c+Cjwvc3ZnPg==" />
       </div>
-      <div class="card" style="padding:0">
-        <svg class="svg-thumb" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Système d’alarme incendie">
-          <defs><linearGradient id="p3" x1="0" x2="1"><stop offset="0" stop-color="#ddd6fe"/><stop offset="1" stop-color="#c7d2fe"/></linearGradient></defs>
-          <rect width="800" height="220" fill="url(#p3)"/>
-          <g transform="translate(90,40)">
-            <rect width="160" height="140" rx="18" fill="#fff" stroke="#cbd5e1"/>
-            <circle cx="80" cy="70" r="30" fill="#ef4444"/>
-            <circle cx="80" cy="70" r="10" fill="#fee2e2"/>
-            <rect x="50" y="115" width="60" height="10" rx="5" fill="#94a3b8"/>
-          </g>
-          <g transform="translate(300,40)">
-            <rect width="160" height="140" rx="18" fill="#fff" stroke="#cbd5e1"/>
-            <rect x="30" y="50" width="100" height="70" rx="10" fill="#f1f5f9"/>
-            <rect x="50" y="130" width="60" height="8" rx="4" fill="#94a3b8"/>
-          </g>
-          <g transform="translate(510,40)">
-            <rect width="160" height="140" rx="18" fill="#fff" stroke="#cbd5e1"/>
-            <rect x="30" y="30" width="100" height="10" rx="5" fill="#94a3b8"/>
-            <rect x="30" y="50" width="90" height="8" rx="4" fill="#cbd5e1"/>
-            <rect x="30" y="70" width="110" height="8" rx="4" fill="#cbd5e1"/>
-          </g>
-        </svg>
+      <div class="card img-card">
+        <img alt="Système d’alarme incendie" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nMjIwJyB2aWV3Qm94PScwIDAgODAwIDIyMCc+CiA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J3AzJyB4MT0nMCcgeDI9JzEnPjxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nI2RkZDZmZScvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nI2M3ZDJmZScvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PScyMjAnIGZpbGw9J3VybCgjcDMpJy8+CiA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSg5MCw0MCknPgogIDxyZWN0IHdpZHRoPScxNjAnIGhlaWdodD0nMTQwJyByeD0nMTgnIGZpbGw9JyNmZmYnIHN0cm9rZT0nI2NiZDVlMScvPgogIDxjaXJjbGUgY3g9JzgwJyBjeT0nNzAnIHI9JzMwJyBmaWxsPScjZWY0NDQ0Jy8+CiAgPGNpcmNsZSBjeD0nODAnIGN5PSc3MCcgcj0nMTAnIGZpbGw9JyNmZWUyZTInLz4KICA8cmVjdCB4PSc1MCcgeT0nMTE1JyB3aWR0aD0nNjAnIGhlaWdodD0nMTAnIHJ4PSc1JyBmaWxsPScjOTRhM2I4Jy8+CiA8L2c+CiA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgzMDAsNDApJz4KICA8cmVjdCB3aWR0aD0nMTYwJyBoZWlnaHQ9JzE0MCcgcng9JzE4JyBmaWxsPScjZmZmJyBzdHJva2U9JyNjYmQ1ZTEnLz4KICA8cmVjdCB4PSczMCcgeT0nNTAnIHdpZHRoPScxMDAnIGhlaWdodD0nNzAnIHJ4PScxMCcgZmlsbD0nI2YxZjVmOScvPgogIDxyZWN0IHg9JzUwJyB5PScxMzAnIHdpZHRoPSc2MCcgaGVpZ2h0PSc4JyByeD0nNCcgZmlsbD0nIzk0YTNiOCcvPgogPC9nPgogPGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoNTEwLDQwKSc+CiAgPHJlY3Qgd2lkdGg9JzE2MCcgaGVpZ2h0PScxNDAnIHJ4PScxOCcgZmlsbD0nI2ZmZicgc3Ryb2tlPScjY2JkNWUxJy8+CiAgPHJlY3QgeD0nMzAnIHk9JzMwJyB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwJyByeD0nNScgZmlsbD0nIzk0YTNiOCcvPgogIDxyZWN0IHg9JzMwJyB5PSc1MCcgd2lkdGg9JzkwJyBoZWlnaHQ9JzgnIHJ4PSc0JyBmaWxsPScjY2JkNWUxJy8+CiAgPHJlY3QgeD0nMzAnIHk9JzcwJyB3aWR0aD0nMTEwJyBoZWlnaHQ9JzgnIHJ4PSc0JyBmaWxsPScjY2JkNWUxJy8+CiA8L2c+Cjwvc3ZnPg==" />
       </div>
     </div>
   </div>
@@ -514,48 +432,24 @@ footer a{color:#c8d3ea}
     <p class="muted">Ressources pour responsables d’ERP et collectivités — pédagogiques, actionnables et à jour.</p>
     <div class="grid cols-3" style="margin-top:16px">
       <article class="card blog-card">
-        <svg class="svg-thumb" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sortie de secours et balisage">
-          <defs><linearGradient id="b1" x1="0" x2="1"><stop offset="0" stop-color="#dcfce7"/><stop offset="1" stop-color="#bbf7d0"/></linearGradient></defs>
-          <rect width="800" height="220" fill="url(#b1)"/>
-          <rect x="70" y="60" width="220" height="100" rx="14" fill="#fff" stroke="#cbd5e1"/>
-          <path d="M95 110 h60 l15 -15 l15 15 h60" stroke="#22c55e" stroke-width="10" fill="none"/>
-          <rect x="320" y="60" width="100" height="100" rx="14" fill="#16a34a"/>
-          <polygon points="360,90 385,110 360,130" fill="#eafff3"/>
-        </svg>
+        <img class="hero-img" alt="Sortie de secours et balisage"
+             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nMjIwJyB2aWV3Qm94PScwIDAgODAwIDIyMCc+CiA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2IxJyB4MT0nMCcgeDI9JzEnPjxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nI2RjZmNlNycvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nI2JiZjdkMCcvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PScyMjAnIGZpbGw9J3VybCgjYjEpJy8+CiA8cmVjdCB4PSc3MCcgeT0nNjAnIHdpZHRoPScyMjAnIGhlaWdodD0nMTAwJyByeD0nMTQnIGZpbGw9JyNmZmYnIHN0cm9rZT0nI2NiZDVlMScvPgogPHBhdGggZD0nTTk1IDExMCBoNjAgbDE1IC0xNSBsMTUgMTUgaDYwJyBzdHJva2U9JyMyMmM1NWUnIHN0cm9rZS13aWR0aD0nMTAnIGZpbGw9J25vbmUnLz4KIDxyZWN0IHg9JzMyMCcgeT0nNjAnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyByeD0nMTQnIGZpbGw9JyMxNmEzNGEnLz4KIDxwb2x5Z29uIHBvaW50cz0nMzYwLDkwIDM4NSwxMTAgMzYwLDEzMCcgZmlsbD0nI2VhZmZmMycvPgo8L3N2Zz4=" />
         <h3 style="margin-top:10px">Les 7 erreurs qui coûtent cher en commission de sécurité</h3>
         <div class="meta">Lecture 5 min • Check-lists</div>
         <p class="small">Dossiers incomplets, essais non faits, plans non conformes… Voici comment les éviter et gagner en crédibilité devant la commission.</p>
         <a class="btn outline" href="#contact">Obtenir la check-list</a>
       </article>
       <article class="card blog-card">
-        <svg class="svg-thumb" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vérifications réglementaires en ERP">
-          <defs><linearGradient id="b2" x1="0" x2="1"><stop offset="0" stop-color="#fef3c7"/><stop offset="1" stop-color="#fde68a"/></linearGradient></defs>
-          <rect width="800" height="220" fill="url(#b2)"/>
-          <rect x="60" y="40" width="320" height="140" rx="16" fill="#fff" stroke="#e5e7eb"/>
-          <rect x="90" y="70" width="260" height="10" rx="5" fill="#94a3b8"/>
-          <rect x="90" y="95" width="240" height="8" rx="4" fill="#cbd5e1"/>
-          <rect x="90" y="115" width="200" height="8" rx="4" fill="#cbd5e1"/>
-          <circle cx="420" cy="110" r="34" fill="#f59e0b"/>
-          <path d="M420 94 v20" stroke="#92400e" stroke-width="6"/>
-          <circle cx="420" cy="130" r="4" fill="#92400e"/>
-        </svg>
+        <img class="hero-img" alt="Vérifications réglementaires en ERP"
+             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nMjIwJyB2aWV3Qm94PScwIDAgODAwIDIyMCc+CiA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2IyJyB4MT0nMCcgeDI9JzEnPjxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nI2ZlZjNjNycvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nI2ZkZTY4YScvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PScyMjAnIGZpbGw9J3VybCgjYjIpJy8+CiA8cmVjdCB4PSc2MCcgeT0nNDAnIHdpZHRoPSczMjAnIGhlaWdodD0nMTQwJyByeD0nMTYnIGZpbGw9JyNmZmYnIHN0cm9rZT0nI2U1ZTdlYicvPgogPHJlY3QgeD0nOTAnIHk9JzcwJyB3aWR0aD0nMjYwJyBoZWlnaHQ9JzEwJyByeD0nNScgZmlsbD0nIzk0YTNiOCcvPgogPHJlY3QgeD0nOTAnIHk9Jzk1JyB3aWR0aD0nMjQwJyBoZWlnaHQ9JzgnIHJ4PSc0JyBmaWxsPScjY2JkNWUxJy8+CiA8cmVjdCB4PSc5MCcgeT0nMTE1JyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzgnIHJ4PSc0JyBmaWxsPScjY2JkNWUxJy8+CiA8Y2lyY2xlIGN4PSc0MjAnIGN5PScxMTAnIHI9JzM0JyBmaWxsPScjZjU5ZTBiJy8+CiA8cGF0aCBkPSdNNDIwIDk0IHYyMCcgc3Ryb2tlPScjOTI0MDBlJyBzdHJva2Utd2lkdGg9JzYnLz4KIDxjaXJjbGUgY3g9JzQyMCcgY3k9JzEzMCcgcj0nNCcgZmlsbD0nIzk1NDAwZScvPgo8L3N2Zz4=" />
         <h3 style="margin-top:10px">Vérifications annuelles en ERP (1er groupe) — le guide clair</h3>
         <div class="meta">Lecture 6 min • Réglementation</div>
         <p class="small">Qui fait quoi ? À quelle périodicité ? Un mémo simple pour ne rien rater (électricité, SSI, éclairage, extincteurs, gaz...).</p>
         <a class="btn outline" href="#contact">Recevoir le mémo</a>
       </article>
       <article class="card blog-card">
-        <svg class="svg-thumb" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dossier SSI prêt pour la commission">
-          <defs><linearGradient id="b3" x1="0" x2="1"><stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#f1f5f9"/></linearGradient></defs>
-          <rect width="800" height="220" fill="url(#b3)"/>
-          <rect x="90" y="40" width="300" height="140" rx="16" fill="#fff" stroke="#e5e7eb"/>
-          <rect x="120" y="70" width="240" height="8" rx="4" fill="#cbd5e1"/>
-          <rect x="120" y="90" width="200" height="8" rx="4" fill="#cbd5e1"/>
-          <rect x="120" y="110" width="260" height="8" rx="4" fill="#cbd5e1"/>
-          <rect x="430" y="40" width="280" height="140" rx="16" fill="#fff" stroke="#e5e7eb"/>
-          <circle cx="570" cy="110" r="34" fill="#ef4444"/>
-          <rect x="540" y="140" width="60" height="8" rx="4" fill="#94a3b8"/>
-        </svg>
+        <img class="hero-img" alt="Dossier SSI prêt pour la commission"
+             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nMjIwJyB2aWV3Qm94PScwIDAgODAwIDIyMCc+CiA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2IzJyB4MT0nMCcgeDI9JzEnPjxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nI2UyZThmMCcvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nI2YxZjVmOScvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PScyMjAnIGZpbGw9J3VybCgjYjMpJy8+CiA8cmVjdCB4PSc5MCcgeT0nNDAnIHdpZHRoPSczMDAnIGhlaWdodD0nMTQwJyByeD0nMTYnIGZpbGw9JyNmZmYnIHN0cm9rZT0nI2U1ZTdlYicvPgogPHJlY3QgeD0nMTIwJyB5PSc3MCcgd2lkdGg9JzI0MCcgaGVpZ2h0PSc4JyByeD0nNCcgZmlsbD0nI2NiZDVlMScvPgogPHJlY3QgeD0nMTIwJyB5PSc5MCcgd2lkdGg9JzIwMCcgaGVpZ2h0PSc4JyByeD0nNCcgZmlsbD0nI2NiZDVlMScvPgogPHJlY3QgeD0nMTIwJyB5PScxMTAnIHdpZHRoPScyNjAnIGhlaWdodD0nOCcgcng9JzQnIGZpbGw9JyNjYmQ1ZTEnLz4KIDxyZWN0IHg9JzQzMCcgeT0nNDAnIHdpZHRoPScyODAnIGhlaWdodD0nMTQwJyByeD0nMTYnIGZpbGw9JyNmZmYnIHN0cm9rZT0nI2U1ZTdlYicvPgogPGNpcmNsZSBjeD0nNTcwJyBjeT0nMTEwJyByPSczNCcgZmlsbD0nI2VmNDQ0NCcvPgogPHJlY3QgeD0nNTQwJyB5PScxNDAnIHdpZHRoPSc2MCcgaGVpZ2h0PSc4JyByeD0nNCcgZmlsbD0nIzk0YTNiOCcvPgo8L3N2Zz4=" />
         <h3 style="margin-top:10px">Monter un dossier SSI « prêt commission »</h3>
         <div class="meta">Lecture 7 min • Méthode</div>
         <p class="small">Structure, pièces à joindre, points d’attention et erreurs fréquentes : la trame qui fait gagner du temps à tout le monde.</p>
