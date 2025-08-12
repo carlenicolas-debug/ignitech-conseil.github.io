@@ -15,7 +15,6 @@
 <meta property="og:url" content="https://ignitech-conseil.fr/">
 <meta property="og:image" content="https://source.unsplash.com/1200x630/?fire,extinguisher">
 
-<!-- Styles inline : sobre & institutionnel -->
 <style>
 :root{
   --bg:#0f172a; --text:#0b1220; --muted:#5b6b86; --primary:#2563eb; --ink:#fff;
@@ -50,7 +49,7 @@ header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6
 .hero{background:linear-gradient(180deg,#f8fafc 0,#fff 100%); padding:72px 0 28px; border-bottom:1px solid #eef2f7}
 .lead{color:var(--muted); font-size:18px}
 .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-.hero-img{margin-top:18px; border-radius:18px; width:100%; height:auto; display:block; border:1px solid #e5e7eb; box-shadow:0 10px 30px -20px rgba(15,23,42,.25)}
+.hero-img{margin-top:18px; border-radius:18px; width:100%; height:auto; display:block; border:1px solid #e5e7eb; box-shadow:0 10px 30px -20px rgba(15,23,42,.25); aspect-ratio: 60/26}
 
 /* Grids & cards */
 .grid{display:grid; gap:18px}
@@ -101,7 +100,7 @@ footer a{color:#c8d3ea}
 .sep{height:1px; background:#eef2f7; margin:28px 0}
 .small{font-size:13px}
 .img-card{overflow:hidden; padding:0}
-.img-card img{display:block; width:100%; height:220px; object-fit:cover}
+.img-card img{display:block; width:100%; height:220px; object-fit:cover; aspect-ratio: 40/11}
 .blog-card .meta{font-size:12px; color:var(--muted)}
 </style>
 
@@ -155,7 +154,12 @@ footer a{color:#c8d3ea}
       <a href="#offres" class="btn">Découvrir l’offre « Audit + Suivi »</a>
       <a href="#prestations" class="btn outline">Voir toutes les prestations</a>
     </div>
-    <img class="hero-img" src="https://source.unsplash.com/1200x520/?fire%20safety,alarm" alt="Contrôle d'un système de sécurité incendie">
+    <img class="hero-img"
+         src="https://source.unsplash.com/1200x520/?fire%20safety,alarm"
+         alt="Contrôle d'un système de sécurité incendie"
+         loading="eager"
+         referrerpolicy="no-referrer"
+         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22520%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2232%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
     <div class="kpis" style="margin-top:20px">
       <div class="kpi"><b>20+ ans</b><br><span class="muted">d’expérience terrain</span></div>
       <div class="kpi"><b>48 h</b><br><span class="muted">pour un retour d’audit* (selon charge)</span></div>
@@ -232,9 +236,27 @@ footer a{color:#c8d3ea}
     </div>
 
     <div class="grid cols-3" style="margin-top:18px">
-      <div class="card img-card"><img loading="lazy" src="https://source.unsplash.com/800x600/?evacuation,plan" alt="Plan d’évacuation en ERP"></div>
-      <div class="card img-card"><img loading="lazy" src="https://source.unsplash.com/800x600/?fire,extinguisher" alt="Vérification des extincteurs"></div>
-      <div class="card img-card"><img loading="lazy" src="https://source.unsplash.com/800x600/?fire,alarm" alt="Système d’alarme incendie"></div>
+      <div class="card img-card">
+        <img loading="lazy"
+             src="https://source.unsplash.com/800x600/?evacuation,plan"
+             alt="Plan d’évacuation en ERP"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2222%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
+      </div>
+      <div class="card img-card">
+        <img loading="lazy"
+             src="https://source.unsplash.com/800x600/?fire,extinguisher"
+             alt="Vérification des extincteurs"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2222%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
+      </div>
+      <div class="card img-card">
+        <img loading="lazy"
+             src="https://source.unsplash.com/800x600/?fire,alarm"
+             alt="Système d’alarme incendie"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2222%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
+      </div>
     </div>
   </div>
 </section>
@@ -276,7 +298,7 @@ footer a{color:#c8d3ea}
           <li>Formations & procédures</li>
           <li>Présence commission (option)</li>
         </ul>
-        <div class="cta-row" style="margin-top:10px">
+        <div class="cta-row" style="margin-top:10px)">
           <a href="#contact" class="btn outline">Demander un devis</a>
         </div>
       </div>
@@ -311,11 +333,21 @@ footer a{color:#c8d3ea}
     <div class="grid cols-2" style="margin-top:16px">
       <div class="card">
         <div class="quote">« Rapport clair, actions faisables, passage en commission sans stress. »</div>
-        <div class="small muted" style="margin-top:8px"><span class="avatar" style="background-image:url('https://source.unsplash.com/80x80/?portrait,woman')"></span>Directrice, École primaire (Type R)</div>
+        <div class="small muted" style="margin-top:8px">
+          <span class="avatar" style="background-image:url('https://source.unsplash.com/80x80/?portrait,woman');"
+                referrerpolicy="no-referrer"
+                onerror="this.style.backgroundImage='url(data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3C/svg%3E)'"></span>
+          Directrice, École primaire (Type R)
+        </div>
       </div>
       <div class="card">
         <div class="quote">« Le pack Audit + Suivi nous a fait gagner du temps et éviter des coûts inutiles. »</div>
-        <div class="small muted" style="margin-top:8px"><span class="avatar" style="background-image:url('https://source.unsplash.com/80x80/?portrait,man')"></span>Gérant, Restaurant (Type N)</div>
+        <div class="small muted" style="margin-top:8px">
+          <span class="avatar" style="background-image:url('https://source.unsplash.com/80x80/?portrait,man');"
+                referrerpolicy="no-referrer"
+                onerror="this.style.backgroundImage='url(data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3C/svg%3E)'"></span>
+          Gérant, Restaurant (Type N)
+        </div>
       </div>
     </div>
   </div>
@@ -434,21 +466,33 @@ footer a{color:#c8d3ea}
     <p class="muted">Ressources pour responsables d’ERP et collectivités — pédagogiques, actionnables et à jour.</p>
     <div class="grid cols-3" style="margin-top:16px">
       <article class="card blog-card">
-        <img loading="lazy" class="hero-img" src="https://source.unsplash.com/800x500/?emergency,exit" alt="Sortie de secours et balisage">
+        <img loading="lazy" class="hero-img"
+             src="https://source.unsplash.com/800x500/?emergency,exit"
+             alt="Sortie de secours et balisage"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2222%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
         <h3 style="margin-top:10px">Les 7 erreurs qui coûtent cher en commission de sécurité</h3>
         <div class="meta">Lecture 5 min • Check-lists</div>
         <p class="small">Dossiers incomplets, essais non faits, plans non conformes… Voici comment les éviter et gagner en crédibilité devant la commission.</p>
         <a class="btn outline" href="#contact">Obtenir la check-list</a>
       </article>
       <article class="card blog-card">
-        <img loading="lazy" class="hero-img" src="https://source.unsplash.com/800x500/?inspection,clipboard" alt="Vérifications réglementaires en ERP">
+        <img loading="lazy" class="hero-img"
+             src="https://source.unsplash.com/800x500/?inspection,clipboard"
+             alt="Vérifications réglementaires en ERP"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2222%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
         <h3 style="margin-top:10px">Vérifications annuelles en ERP (1er groupe) — le guide clair</h3>
         <div class="meta">Lecture 6 min • Réglementation</div>
         <p class="small">Qui fait quoi ? À quelle périodicité ? Un mémo simple pour ne rien rater (électricité, SSI, éclairage, extincteurs, gaz...).</p>
         <a class="btn outline" href="#contact">Recevoir le mémo</a>
       </article>
       <article class="card blog-card">
-        <img loading="lazy" class="hero-img" src="https://source.unsplash.com/800x500/?blueprint,architecture" alt="Dossier SSI prêt pour la commission">
+        <img loading="lazy" class="hero-img"
+             src="https://source.unsplash.com/800x500/?blueprint,architecture"
+             alt="Dossier SSI prêt pour la commission"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect fill=%22%23f1f5f9%22 width=%22100%25%22 height=%22100%25%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236b7280%22 font-family=%22Arial%22 font-size=%2222%22%3EImage indisponible%3C/text%3E%3C/svg%3E';">
         <h3 style="margin-top:10px">Monter un dossier SSI « prêt commission »</h3>
         <div class="meta">Lecture 7 min • Méthode</div>
         <p class="small">Structure, pièces à joindre, points d’attention et erreurs fréquentes : la trame qui fait gagner du temps à tout le monde.</p>
@@ -520,7 +564,6 @@ footer a{color:#c8d3ea}
   </div>
 </footer>
 
-<!-- Mentions & Confidentialité -->
 <section id="mentions" class="section">
   <div class="container">
     <h2>Mentions légales</h2>
@@ -536,10 +579,8 @@ footer a{color:#c8d3ea}
   </div>
 </section>
 
-<!-- Sticky mobile CTA -->
 <a class="sticky-cta btn" href="tel:+33613620503">Appeler Ignitech Conseil</a>
 
-<!-- JS minimal : année dynamique + mailto -->
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
 
