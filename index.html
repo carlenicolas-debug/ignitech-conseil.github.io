@@ -1,1 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ignitech Conseil — Audit sécurité incendie ERP Drôme · Ardèche</title>
+<meta name="description" content="Préventionniste PRV2. Audits sécurité incendie pour ERP (Drôme, Ardèche, Isère, Rhône, Vaucluse). Conformité réglementaire, plan d’action, accompagnement en commission. Appel découverte 15 min offert.">
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph / Twitter (facultatif : remplace l'URL image quand tu en auras une) -->
+<meta property="og:title" content="Ignitech Conseil — Audit sécurité incendie ERP Drôme · Ardèche">
+<meta property="og:description" content="Conformité réglementaire, sérénité d’exploitation et accompagnement terrain.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ignitech-conseil.fr/">
+<meta property="og:image" content="https://ignitech-conseil.fr/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Styles inline : sobre & institutionnel -->
+<style>
+:root{
+  --bg:#0f172a;          /* bleu nuit */
+  --text:#0b1220;
+  --muted:#5b6b86;
+  --primary:#2563eb;     /* bleu action */
+  --primary-ink:#ffffff;
+  --surface:#ffffff;
+  --soft:#f1f5f9;        /* gris clair */
+  --ring:rgba(37,99,235,.35);
+  --ok:#16a34a; --warn:#f59e0b; --danger:#dc2626;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+  color:var(--text); background:#fff;
+}
+a{color:var(--primary); text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px; margin-inline:auto; padding:0 20px}
+.section{padding:64px 0}
+h1,h2,h3{margin:0 0 .5rem}
+h1{font-size:clamp(28px,4vw,40px)}
+h2{font-size:clamp(22px,3vw,30px)}
+h3{font-size:clamp(18px,2.2vw,22px)}
+p{margin:0 0 1rem}
+
+/* Header */
+header{
+  position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6px);
+  background:rgba(255,255,255,.9); border-bottom:1px solid #e5e7eb;
+}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:64px}
+.brand{display:flex; flex-direction:column}
+.brand b{font-size:18px; letter-spacing:.2px}
+.brand span{font-size:12px; color:var(--muted)}
+.menu{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  background:var(--primary); color:var(--primary-ink); border-radius:12px;
+  padding:10px 16px; font-weight:600; border:1px solid transparent;
+  box-shadow:0 8px 20px -10px var(--ring);
+}
+.btn:hover{filter:brightness(.96); text-decoration:none}
+.btn.outline{background:#fff; color:var(--primary); border-color:var(--primary)}
+.badge{display:inline-block; background:#e8eefc; color:#1e3a8a; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700}
+
+/* Hero */
+.hero{
+  background:linear-gradient(180deg,#f8fafc 0,#fff 100%);
+  padding:72px 0 40px; border-bottom:1px solid #eef2f7;
+}
+.hero h1{letter-spacing:.2px}
+.lead{color:var(--muted); font-size:18px}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+/* Grids & cards */
+.grid{display:grid; gap:18px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+.card{
+  background:var(--surface); border:1px solid #e5e7eb; border-radius:16px; padding:18px;
+  box-shadow:0 10px 30px -20px rgba(15,23,42,.25);
+}
+.card h3{margin-bottom:.25rem}
+.muted{color:var(--muted)}
+.kpis{display:flex; gap:18px; flex-wrap:wrap}
+.kpi{background:var(--soft); padding:14px 16px; border-radius:14px; min-width:180px}
+.kpi b{font-size:22px}
+
+/* Pricing */
+.pricing .price{font-size:28px; font-weight:800}
+.pricing ul{margin:0; padding-left:18px}
+.tag{font-size:12px; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; padding:4px 8px; border-radius:999px; display:inline-block}
+
+/* Testimonials */
+.quote{font-style:italic}
+.avatar{width:40px; height:40px; border-radius:999px; background:var(--soft); display:inline-block; margin-right:10px}
+
+/* Target audience pills */
+.pills{display:flex; gap:8px; flex-wrap:wrap}
+.pill{background:#eef2ff; color:#3730a3; padding:8px 12px; border-radius:999px; font-weight:600; font-size:13px}
+
+/* Form */
+form{display:grid; gap:12px}
+input,select,textarea{
+  width:100%; padding:12px 12px; border:1px solid #dbe2ea; border-radius:12px; font:inherit; background:#fff;
+}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--ring); border-color:var(--primary)}
+label{font-weight:600}
+.checks{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+@media(max-width:650px){.checks{grid-template-columns:1fr}}
+.help{font-size:12px; color:var(--muted)}
+
+/* Footer */
+footer{background:var(--bg); color:#c8d3ea}
+footer a{color:#c8d3ea}
+.footer-grid{display:grid; gap:18px; grid-template-columns:2fr 1fr 1fr}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobile CTA */
+.sticky-cta{
+  position:fixed; inset:auto 16px 16px 16px; display:none; z-index:60;
+}
+@media(max-width:700px){.sticky-cta{display:block}}
+/* Small helpers */
+.icon{width:22px; height:22px; vertical-align:-4px}
+.sep{height:1px; background:#eef2f7; margin:28px 0}
+.small{font-size:13px}
+</style>
+
+<!-- JSON-LD LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Ignitech Conseil",
+  "description":"Audit sécurité incendie pour ERP : diagnostic, plan d'action, accompagnement en commission.",
+  "areaServed":["Drôme","Ardèche","Isère","Rhône","Vaucluse"],
+  "url":"https://ignitech-conseil.fr/",
+  "telephone":"+33613620503",
+  "email":"contact@ignitech-conseil.fr",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"34 rue de l’Équerre",
+    "postalCode":"07130",
+    "addressLocality":"Saint-Péray",
+    "addressCountry":"FR"
+  },
+  "sameAs":[]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container nav" role="navigation" aria-label="Navigation principale">
+    <div class="brand">
+      <b>Ignitech Conseil</b>
+      <span>Préventionniste ERP · Drôme • Ardèche</span>
+    </div>
+    <nav class="menu">
+      <a href="#prestations">Prestations</a>
+      <a href="#offres">Offres</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#zones">Zone d’intervention</a>
+      <a href="#mini-audit" class="btn outline">Mini-audit en ligne</a>
+      <a href="#contact" class="btn">Appel 15 min offert</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Conformité & sérénité d’exploitation</span>
+    <h1>Audit sécurité incendie ERP — résultats concrets, documents prêts commission</h1>
+    <p class="lead">Vous gagnez du temps, vous réduisez les risques, vous passez la commission sereinement.</p>
+    <div class="cta-row">
+      <a href="#offres" class="btn">Découvrir l’offre « Audit + Suivi »</a>
+      <a href="#prestations" class="btn outline">Voir toutes les prestations</a>
+    </div>
+    <div class="kpis" style="margin-top:20px">
+      <div class="kpi"><b>20+ ans</b><br><span class="muted">d’expérience terrain</span></div>
+      <div class="kpi"><b>48 h</b><br><span class="muted">pour un retour d’audit* (selon charge)</span></div>
+      <div class="kpi"><b>100%</b><br><span class="muted">docs remis au format commission</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="benefices" class="section">
+  <div class="container grid cols-3">
+    <div class="card">
+      <h3>
+        <!-- Bouclier -->
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3.4 9.7-7 11-3.6-1.3-7-6-7-11V5l7-3zM7 8.6V11c0 3.8 2.6 7.7 5 9 2.4-1.3 5-5.2 5-9V8.6L12 6.4 7 8.6z"/></svg>
+        Sécurité accrue
+      </h3>
+      <p class="muted">Risques maîtrisés, organisation claire, moyens de secours adaptés à votre activité.</p>
+    </div>
+    <div class="card">
+      <h3>
+        <!-- Check -->
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"/></svg>
+        Conformité garantie
+      </h3>
+      <p class="muted">Diagnostic réglementaire et plan d’action priorisé pour atteindre la conformité ERP.</p>
+    </div>
+    <div class="card">
+      <h3>
+        <!-- Smile -->
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm0 18a8 8 0 118-8 8.009 8.009 0 01-8 8zm-4-7h2v2H8zm6 0h2v2h-2zm-6.07 4.07a5.5 5.5 0 008.14 0l1.41 1.41a7.5 7.5 0 01-11 0z"/></svg>
+        Tranquillité d’esprit
+      </h3>
+      <p class="muted">Accompagnement jusqu’à la commission : vous n’êtes pas seul face aux exigences.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prestations" class="section">
+  <div class="container">
+    <h2>Prestations</h2>
+    <p class="muted">Claires, actionnables et orientées résultats.</p>
+    <div class="grid cols-3" style="margin-top:16px">
+      <div class="card">
+        <h3>Audit ERP complet</h3>
+        <p>Visite, relevés, analyse réglementaire, rapport synthèse + grille de conformité, plan d’action chiffré.</p>
+        <ul class="small">
+          <li>Inclut un point visio de restitution</li>
+          <li>Documents prêts pour la commission</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Accompagnement commission</h3>
+        <p>Préparation du dossier, réponses aux observations, échanges avec les services, présence le jour J (option).</p>
+      </div>
+      <div class="card">
+        <h3>Conseil & formation</h3>
+        <p>Procédures d’évacuation (MS 51), organisation interne, registres et vérifications périodiques, sensibilisation du personnel.</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Dossiers spécifiques</h3>
+        <p>Modifications d’aménagement, avis préalable, manifestations temporaires (chapiteaux, festivals, marchés…), notices de sécurité.</p>
+      </div>
+      <div class="card">
+        <h3>Habitat inclusif</h3>
+        <p>Diagnostic et mise en conformité (textes 2025 pris en compte), accompagnement à l’ouverture.</p>
+      </div>
+      <div class="card">
+        <h3>Audit flash</h3>
+        <p>Visite ciblée 2–3 h, priorisation des écarts, feuille de route express (utile avant travaux ou commission proche).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="offres" class="section pricing" style="background:linear-gradient(180deg,#fff 0,#f8fafc 100%)">
+  <div class="container">
+    <h2>Offres & packs</h2>
+    <p class="muted">Des formules simples et lisibles. <span class="tag">Appel découverte 15 min offert</span></p>
+    <div class="grid cols-3" style="margin-top:16px">
+      <div class="card">
+        <h3>Audit ERP</h3>
+        <p class="price">1 200 € HT</p>
+        <ul>
+          <li>Visite + rapport complet</li>
+          <li>Plan d’action priorisé</li>
+          <li>Restitution visio</li>
+        </ul>
+        <div class="cta-row" style="margin-top:10px">
+          <a href="#contact" class="btn">Demander l’audit</a>
+        </div>
+      </div>
+      <div class="card" style="border-color:#c7d2fe">
+        <h3>Pack Audit + Suivi</h3>
+        <p class="price">1 900 € HT <span class="muted small">au lieu de 2 000 €</span></p>
+        <ul>
+          <li>Audit complet</li>
+          <li>+ Suivi de mise en conformité</li>
+          <li>+ Préparation commission</li>
+        </ul>
+        <div class="cta-row" style="margin-top:10px">
+          <a href="#contact" class="btn">Choisir le pack</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Accompagnement à la carte</h3>
+        <p class="price">Sur devis</p>
+        <ul>
+          <li>Habitat inclusif, évènementiel</li>
+          <li>Formations & procédures</li>
+          <li>Présence commission (option)</li>
+        </ul>
+        <div class="cta-row" style="margin-top:10px">
+          <a href="#contact" class="btn outline">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+    <p class="help">Tarifs indicatifs micro-entreprise — TVA non applicable, art. 293 B du CGI.</p>
+  </div>
+</section>
+
+<section id="differenciation" class="section">
+  <div class="container">
+    <h2>Pourquoi Ignitech ?</h2>
+    <div class="grid cols-3" style="margin-top:16px">
+      <div class="card">
+        <h3>Expertise prévention (PRV2)</h3>
+        <p class="muted">Lecture stricte des textes ERP, doctrine locale intégrée, livrables attendus par les commissions.</p>
+      </div>
+      <div class="card">
+        <h3>Méthode orientée action</h3>
+        <p class="muted">Écarts priorisés, solutions pratico-pratiques, échéancier faisable avec vos équipes et prestataires.</p>
+      </div>
+      <div class="card">
+        <h3>Docs « prêts commission »</h3>
+        <p class="muted">Rapports synthétiques, grilles, plans, check-lists : vous arrivez serein et crédible le jour J.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="temoignages" class="section" style="background:#fafbff">
+  <div class="container">
+    <h2>Témoignages</h2>
+    <div class="grid cols-2" style="margin-top:16px">
+      <div class="card">
+        <div class="quote">« Rapport clair, actions faisables, passage en commission sans stress. »</div>
+        <div class="small muted" style="margin-top:8px"><span class="avatar"></span>Directrice, École primaire (Type R)</div>
+      </div>
+      <div class="card">
+        <div class="quote">« Le pack Audit + Suivi nous a fait gagner du temps et éviter des coûts inutiles. »</div>
+        <div class="small muted" style="margin-top:8px"><span class="avatar"></span>Gérant, Restaurant (Type N)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cibles" class="section">
+  <div class="container">
+    <h2>Pour qui ?</h2>
+    <div class="pills" style="margin-top:10px">
+      <span class="pill">Commerçants & restaurateurs</span>
+      <span class="pill">Collectivités & écoles</span>
+      <span class="pill">Organisateurs d’évènements</span>
+      <span class="pill">Établissements sportifs & culturels</span>
+      <span class="pill">Habitat inclusif</span>
+    </div>
+  </div>
+</section>
+
+<section id="mini-audit" class="section">
+  <div class="container">
+    <h2>Mini-audit en ligne (gratuit)</h2>
+    <p class="muted">3 minutes : recevez un premier état de vos conformités et un plan d’action priorisé.</p>
+    <form id="auditForm" aria-label="Mini-audit en ligne">
+      <div class="grid cols-2">
+        <div>
+          <label for="nom">Nom / Société</label>
+          <input id="nom" name="nom" placeholder="Nom / Raison sociale" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="vous@domaine.fr" required>
+        </div>
+      </div>
+      <div class="grid cols-2">
+        <div>
+          <label for="tel">Téléphone</label>
+          <input id="tel" name="tel" type="tel" placeholder="06 xx xx xx xx">
+        </div>
+        <div>
+          <label for="type">Type d’ERP</label>
+          <select id="type" name="type">
+            <option>Type M (Magasin)</option>
+            <option>Type N (Restauration)</option>
+            <option>Type L (Salle)</option>
+            <option>Type R (Établissement d’enseignement)</option>
+            <option>Autre / à préciser</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label>Conformités actuelles (cochez ce qui est en place)</label>
+        <div class="checks small">
+          <label><input type="checkbox" name="check" value="SSI / alarme conforme"> SSI / alarme conforme</label>
+          <label><input type="checkbox" name="check" value="Éclairage de sécurité OK"> Éclairage de sécurité OK</label>
+          <label><input type="checkbox" name="check" value="Extincteurs vérifiés (annuel)"> Extincteurs vérifiés (annuel)</label>
+          <label><input type="checkbox" name="check" value="Essais d’évacuation (MS 51)"> Essais d’évacuation (MS 51)</label>
+          <label><input type="checkbox" name="check" value="Essais d’alerte (MS 74)"> Essais d’alerte (MS 74)</label>
+          <label><input type="checkbox" name="check" value="Gaz / cuisine > 20 kW maîtrisé"> Gaz / cuisine &gt; 20 kW maîtrisé</label>
+          <label><input type="checkbox" name="check" value="Registre de sécurité tenu"> Registre de sécurité tenu</label>
+          <label><input type="checkbox" name="check" value="Formation du personnel"> Formation du personnel</label>
+        </div>
+      </div>
+      <div>
+        <label for="besoin">Votre contexte</label>
+        <textarea id="besoin" name="besoin" rows="4" placeholder="Ex : Commission dans 6 semaines, travaux prévus, extension, etc."></textarea>
+      </div>
+      <div class="cta-row">
+        <button type="submit" class="btn">Recevoir mon mini-audit</button>
+        <span class="help">Vous recevrez un récapitulatif par email.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="zones" class="section" style="background:#fafbff">
+  <div class="container">
+    <h2>Zone d’intervention</h2>
+    <p class="muted">Basé à Saint-Péray. Déplacements réguliers en :</p>
+    <div class="grid cols-3" style="margin-top:14px">
+      <div class="card"><b>Drôme (26)</b><br><span class="muted small">Valence, Romans, Montélimar…</span></div>
+      <div class="card"><b>Ardèche (07)</b><br><span class="muted small">Privas, Annonay, Tournon…</span></div>
+      <div class="card"><b>Isère · Rhône · Vaucluse</b><br><span class="muted small">Vienne, Lyon, Orange…</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="container">
+    <h2>Questions fréquentes</h2>
+    <div class="grid cols-2" style="margin-top:12px">
+      <div class="card">
+        <h3>Combien de temps pour un audit ?</h3>
+        <p class="muted">Visite sous disponibilité, rapport sous 48–72 h selon la complexité. Urgences possibles.</p>
+      </div>
+      <div class="card">
+        <h3>Vous intervenez le jour de la commission ?</h3>
+        <p class="muted">Oui, en option. Préparation des réponses et présence possible selon besoin.</p>
+      </div>
+      <div class="card">
+        <h3>Pouvez-vous former le personnel ?</h3>
+        <p class="muted">Oui : évacuation, manipulation des extincteurs, organisation interne, registres.</p>
+      </div>
+      <div class="card">
+        <h3>Travaillez-vous avec nos prestataires ?</h3>
+        <p class="muted">Oui, coordination fluide : SSI, électricien, vérificateur extincteurs, etc.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section" style="background:linear-gradient(180deg,#f8fafc 0,#fff 100%)">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="muted">Appel découverte 15 minutes offert — voyons où vous en êtes et ce qui est prioritaire.</p>
+    <div class="grid cols-2" style="margin-top:16px">
+      <div class="card">
+        <p><b>Ignitech Conseil</b><br>
+        34 rue de l’Équerre, 07130 Saint-Péray<br>
+        <a href="tel:+33613620503">06 13 62 05 03</a><br>
+        <a href="mailto:contact@ignitech-conseil.fr">contact@ignitech-conseil.fr</a></p>
+        <p class="small muted">Micro-entreprise — TVA non applicable, art. 293 B du CGI.</p>
+        <div class="cta-row" style="margin-top:10px">
+          <a class="btn" href="tel:+33613620503">Appeler maintenant</a>
+          <a class="btn outline" href="mailto:contact@ignitech-conseil.fr?subject=Demande%20d%27audit%20ERP">Écrire un email</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Demander un devis</h3>
+        <form id="devisForm">
+          <label for="d_nom">Nom / Société</label>
+          <input id="d_nom" required>
+          <label for="d_email">Email</label>
+          <input id="d_email" type="email" required>
+          <label for="d_msg">Votre besoin</label>
+          <textarea id="d_msg" rows="4" placeholder="Type d’établissement, échéance, contraintes…"></textarea>
+          <div class="cta-row" style="margin-top:8px">
+            <button class="btn" type="submit">Envoyer</button>
+            <span class="help">Envoi par email — aucun stockage sur le site.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container section">
+    <div class="footer-grid">
+      <div>
+        <b>Ignitech Conseil</b><br>
+        <span class="small">Préventionniste ERP — Audits, mises en conformité, accompagnement commission.</span>
+        <div style="margin-top:10px">
+          <a class="badge" href="#mini-audit">Mini-audit gratuit</a>
+        </div>
+      </div>
+      <div>
+        <b>Liens</b><br>
+        <a href="#prestations">Prestations</a><br>
+        <a href="#offres">Offres</a><br>
+        <a href="#temoignages">Témoignages</a><br>
+        <a href="#zones">Zone d’intervention</a>
+      </div>
+      <div>
+        <b>Légal</b><br>
+        <a href="#mentions">Mentions légales</a><br>
+        <a href="#confidentialite">Confidentialité</a>
+      </div>
+    </div>
+    <div class="small" style="margin-top:20px; color:#9db0d6">© <span id="y"></span> Ignitech Conseil. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<!-- Mentions & Confidentialité -->
+<section id="mentions" class="section">
+  <div class="container">
+    <h2>Mentions légales</h2>
+    <p class="small muted">Éditeur : Ignitech Conseil — 34 rue de l’Équerre, 07130 Saint-Péray — contact@ignitech-conseil.fr — 06 13 62 05 03.<br>
+    Hébergement : GitHub Pages. <br>
+    <em>Renseigner SIREN dès attribution (facultatif sur la page publique).</em></p>
+  </div>
+</section>
+<section id="confidentialite" class="section" style="padding-top:0">
+  <div class="container">
+    <h2>Confidentialité</h2>
+    <p class="small muted">Les formulaires ouvrent votre messagerie et envoient un email ; aucune donnée n’est stockée côté site.</p>
+  </div>
+</section>
+
+<!-- Sticky mobile CTA -->
+<a class="sticky-cta btn" href="tel:+33613620503">Appeler Ignitech Conseil</a>
+
+<!-- JS minimal : année dynamique + envoi des formulaires par mailto + mini helpers -->
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+/* Mini-audit => mailto */
+document.getElementById('auditForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nom = document.getElementById('nom').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const tel = document.getElementById('tel').value.trim();
+  const type = document.getElementById('type').value;
+  const besoin = document.getElementById('besoin').value.trim();
+  const checks = [...document.querySelectorAll('input[name="check"]:checked')].map(c=>'- '+c.value).join('%0D%0A') || 'Aucune case cochée';
+
+  const subject = encodeURIComponent('Mini-audit — ' + nom);
+  const body = encodeURIComponent(
+`Nom / Société : ${nom}
+Email : ${email}
+Téléphone : ${tel}
+Type d’ERP : ${type}
+
+Conformités en place :
+${decodeURIComponent(checks)}
+
+Contexte :
+${besoin}
+
+(Envoyé depuis ignitech-conseil.fr)`
+  );
+
+  window.location.href = `mailto:contact@ignitech-conseil.fr?subject=${subject}&body=${body}`;
+});
+
+/* Devis => mailto */
+document.getElementById('devisForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const n = document.getElementById('d_nom').value.trim();
+  const m = document.getElementById('d_email').value.trim();
+  const msg = document.getElementById('d_msg').value.trim();
+  const subject = encodeURIComponent('Demande de devis — ' + n);
+  const body = encodeURIComponent(
+`Nom / Société : ${n}
+Email : ${m}
+
+Message :
+${msg}
+
+(Envoyé depuis ignitech-conseil.fr)`
+  );
+  window.location.href = `mailto:contact@ignitech-conseil.fr?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
 
