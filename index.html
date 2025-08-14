@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -12,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ignitech Conseil — Prévention incendie ERP">
   <meta property="og:description" content="Conformité incendie claire et actionnable : audits ERP, préparation commission, vérifications. Rapports utilisables par la commission en 5 jours.">
-  <meta property="og:image" content="https://ignitech-conseil.fr/og-image.jpg">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=70">
   <meta property="og:url" content="https://ignitech-conseil.fr/">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -21,49 +20,70 @@
 
   <style>
     :root{
-      --brand:#0f4c81; --accent:#22a3a9; --ink:#1a1a1a; --muted:#6b7280; --bg:#f8fafc; --paper:#ffffff;
-      --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.07);
+      /* Palette plus stylée (pro + punchy) */
+      --brand-1:#0e2a47;         /* Indigo profond */
+      --brand-2:#22a3a9;         /* Cyan/teal */
+      --accent:#ff6b3d;          /* Orange call-to-action */
+      --ink:#0f172a;             /* Texte */
+      --muted:#65748b;
+      --bg:#0b1220;              /* Fond héro sombre stylé */
+      --paper:#ffffff;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(3,10,22,.20);
+      --ring:0 0 0 5px rgba(34,163,169,.15);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-    a{color:var(--brand);text-decoration:none}
-    img{max-width:100%;height:auto;border-radius:10px}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eef1f4;z-index:999}
-    .wrap{max-width:1100px;margin:auto;padding:0 20px}
+    body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;color:var(--ink);background:#f4f7fb}
+    a{color:var(--brand-2);text-decoration:none}
+    a:hover{opacity:.9}
+    img{max-width:100%;height:auto;border-radius:12px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.88);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #e7eef6;z-index:999}
+    .wrap{max-width:1140px;margin:auto;padding:0 20px}
     .nav{display:flex;align-items:center;gap:24px;padding:12px 0}
-    .nav a{font-weight:600;color:#19324d}
+    .nav a{font-weight:600;color:#102a43}
     .brand{display:flex;align-items:center;gap:10px}
     .brand svg{height:34px;width:auto}
-    .cta{background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;box-shadow:var(--shadow)}
-    .hero{padding:64px 0;background:linear-gradient(130deg,#e6f4ff 0%,#fff 60%);}
-    .hero h1{font-size:40px;margin:0 0 14px}
-    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .pill{display:inline-block;background:#eaf3ff;color:#0f4c81;border-radius:999px;padding:6px 12px;font-weight:600;margin-bottom:10px}
-    .card{background:var(--paper);border:1px solid #eef1f4;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    section{padding:64px 0}
-    h2{font-size:28px;margin:0 0 18px}
-    h3{margin:16px 0 8px}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .cta{background:linear-gradient(135deg,var(--accent),#ff8f5f);color:#fff;padding:10px 16px;border-radius:12px;box-shadow:var(--shadow);font-weight:800}
+    .cta:hover{transform:translateY(-1px)}
+    .hero{padding:72px 0;background:
+      radial-gradient(1200px 500px at 10% -10%, #173859 0%, transparent 60%),
+      radial-gradient(1000px 400px at 110% 10%, #134b50 0%, transparent 60%),
+      var(--bg); color:#dbe7ff}
+    .hero h1{font-size:42px;margin:0 0 14px;line-height:1.15;color:#e8f1ff}
+    .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .pill{display:inline-block;background:linear-gradient(120deg,rgba(34,163,169,.18),rgba(255,107,61,.18));color:#e8f1ff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 12px;font-weight:700;margin-bottom:12px}
+    .card{background:var(--paper);border:1px solid #e7eef6;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .photo-card{position:relative;overflow:hidden}
+    .photo-card img{display:block;width:100%;height:280px;object-fit:cover;border-radius:14px}
+    .photo-card:after{content:"";position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.05)}
+    section{padding:72px 0}
+    h2{font-size:30px;margin:0 0 18px}
+    h3{margin:14px 0 8px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
     .kpis{display:flex;gap:18px;flex-wrap:wrap}
     .kpis .card{flex:1;min-width:230px}
     .muted{color:var(--muted)}
     ul.check{margin:0;padding-left:20px}
     ul.check li{margin:8px 0}
-    .price{font-size:36px;font-weight:800;color:#0d3e65}
+    .price{font-size:36px;font-weight:900;color:#0d3e65}
     .badge{display:inline-block;background:#e9fff7;color:#0a7b5b;border:1px solid #b8f2df;border-radius:10px;padding:4px 10px;margin-left:8px}
     .blog article{margin-bottom:28px}
-    details{border:1px solid #e6e9ee;border-radius:12px;padding:14px 18px;background:#fff}
+    details{border:1px solid #e6e9ee;border-radius:14px;padding:14px 18px;background:#fff}
     details[open]{box-shadow:var(--shadow)}
-    summary{cursor:pointer;font-weight:700}
+    summary{cursor:pointer;font-weight:800}
     .faq details{background:#fbfcfe}
-    .footer{padding:40px 0;background:#0f172a;color:#cbd5e1}
-    .footer a{color:#cbd5e1;text-decoration:underline}
-    .sticky-cta{position:fixed;bottom:18px;right:18px;background:var(--accent);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);font-weight:700}
-    @media (max-width:880px){
+    .footer{padding:44px 0;background:#0a1222;color:#cbd5e1;border-top:1px solid #0f1c36}
+    .footer a{color:#d9e5ff;text-decoration:underline}
+    .sticky-cta{position:fixed;bottom:18px;right:18px;background:linear-gradient(135deg,var(--accent),#ff8f5f);color:#fff;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);font-weight:800}
+    .input, textarea{width:100%;padding:12px 14px;border:1px solid #dfe3ea;border-radius:12px;font:inherit}
+    .input:focus, textarea:focus{outline:none;box-shadow:var(--ring);border-color:#bcdfe2}
+    .label{display:block;font-weight:700;margin-bottom:6px}
+    .chip{display:inline-block;border:1px solid #e7eef6;border-radius:999px;padding:6px 10px;margin:6px 8px 0 0;background:#fff}
+    @media (max-width:940px){
       .hero .grid,.grid3,.grid2{grid-template-columns:1fr}
-      .hero h1{font-size:32px}
+      .hero h1{font-size:34px}
     }
   </style>
 </head>
@@ -72,13 +92,11 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Ignitech Conseil">
-      <!-- Logo inline (fallback) -->
-      <svg viewBox="0 0 190 40" role="img" aria-label="Ignitech Conseil">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0f4c81"/><stop offset="1" stop-color="#22a3a9"/></linearGradient>
-        </defs>
-        <rect x="0" y="5" width="30" height="30" rx="6" fill="url(#g)"/>
-        <text x="40" y="27" font-size="20" font-weight="700" fill="#0f2a43">Ignitech Conseil</text>
+      <!-- Logo inline -->
+      <svg viewBox="0 0 210 40" role="img" aria-label="Ignitech Conseil">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0e2a47"/><stop offset="1" stop-color="#22a3a9"/></linearGradient></defs>
+        <rect x="0" y="5" width="34" height="30" rx="8" fill="url(#g)"/>
+        <text x="44" y="27" font-size="20" font-weight="800" fill="#0e2a47">Ignitech Conseil</text>
       </svg>
     </a>
     <nav style="margin-left:auto;display:flex;gap:16px;flex-wrap:wrap">
@@ -98,26 +116,24 @@
       <div>
         <span class="pill">Conformité ERP claire & actionnable</span>
         <h1>Audits incendie <u>utilisables par la commission</u> en 5&nbsp;jours</h1>
-        <p class="muted">Drôme • Isère • Rhône • Vaucluse — <strong>PRV2, 23&nbsp;ans d’expérience</strong>. Nous transformons la réglementation en décisions simples : <em>ce qui est conforme, ce qui bloque, ce qu’il faut faire</em>, avec les articles cités.</p>
+        <p class="muted" style="color:#b9c9e6">Drôme • Isère • Rhône • Vaucluse — <strong>PRV2, 23&nbsp;ans d’expérience</strong>. Nous transformons la réglementation en décisions simples : <em>ce qui est conforme, ce qui bloque, ce qu’il faut faire</em>, avec les articles cités.</p>
         <div class="kpis" style="margin-top:14px">
-          <div class="card"><strong>Rapport exploitable</strong><br><span class="muted">Grilles contrôle + photos + références</span></div>
-          <div class="card"><strong>Plan d’actions priorisé</strong><br><span class="muted">3 niveaux : immédiat / court terme / suivi</span></div>
+          <div class="card"><strong>Rapport exploitable</strong><br><span class="muted">Grilles + photos + références</span></div>
+          <div class="card"><strong>Plan d’actions priorisé</strong><br><span class="muted">Immédiat / court terme / suivi</span></div>
           <div class="card"><strong>Prépa commission</strong><br><span class="muted">Dossier & essais MS 74 cadrés</span></div>
         </div>
         <p style="margin-top:16px">
           <a class="cta" href="#contact">Obtenir un devis <b>24 h</b></a>
           <span class="badge">SIREN 895023505</span>
         </p>
+        <div class="muted" style="margin-top:8px">
+          <span class="chip">Rapport PDF 5 jours</span>
+          <span class="chip">Articles cités</span>
+          <span class="chip">Photos annotées</span>
+        </div>
       </div>
-      <div class="card">
-        <img loading="lazy" src="data:image/svg+xml;utf8,
-          <svg xmlns='http://www.w3.org/2000/svg' width='800' height='520'>
-            <defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%230f4c81'/><stop offset='1' stop-color='%2322a3a9'/></linearGradient></defs>
-            <rect width='800' height='520' fill='url(%23g)'/>
-            <text x='40' y='120' fill='white' font-size='36' font-family='system-ui' font-weight='700'>Prévention ERP</text>
-            <text x='40' y='170' fill='white' font-size='20' font-family='system-ui'>Audit • Commission • Vérifications</text>
-          </svg>" alt="Illustration prévention incendie ERP">
-        <p class="muted" style="margin:10px 0 0">Illustration intégrée &lt;SVG&gt; (zéro dépendance, rapide)</p>
+      <div class="card photo-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=70" alt="Inspection et plans de sécurité dans un ERP">
       </div>
     </div>
   </div>
@@ -129,6 +145,7 @@
     <p class="muted">Chaque mission inclut : relevés sur site, analyse documentaire, citations d’articles, plan d’actions priorisé, briefing de restitution.</p>
     <div class="grid3">
       <div class="card" id="audit-erp">
+        <div class="photo-card"><img loading="lazy" src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=70" alt="Audit de sécurité incendie sur site"></div>
         <h3>Audit sécurité incendie ERP</h3>
         <ul class="check">
           <li>État des lieux complet (dégagements, alarme, désenfumage, élec, gaz, ventilation…)</li>
@@ -138,6 +155,7 @@
         <p><a class="cta" href="#contact">Demander l’audit</a></p>
       </div>
       <div class="card" id="commission">
+        <div class="photo-card"><img loading="lazy" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=70" alt="Préparation d'une commission de sécurité ERP"></div>
         <h3>Préparation & accompagnement commission</h3>
         <ul class="check">
           <li>Dossier : pièces, contrats, essais (MS 74), plan d’implantation</li>
@@ -147,10 +165,11 @@
         <p><a class="cta" href="#blog-commission">Lire le guide</a></p>
       </div>
       <div class="card" id="verifications">
+        <div class="photo-card"><img loading="lazy" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=70" alt="Check-list des vérifications réglementaires"></div>
         <h3>Vérifications réglementaires</h3>
         <ul class="check">
           <li>Périodicités & intervenants (ERP vs employeur s’il y a des salariés)</li>
-          <li>Traçabilité : registres, contrats, PV, rapports de contrôle</li>
+          <li>Traçabilité : registres, contrats, PV, rapports</li>
           <li>Organisation documentaire pour la commission</li>
         </ul>
         <p><a class="cta" href="#blog-checklist">Voir la check-list</a></p>
@@ -192,14 +211,17 @@
     <h2>Références récentes</h2>
     <div class="grid3">
       <div class="card">
+        <div class="photo-card"><img loading="lazy" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=70" alt="Centre commercial type M"></div>
         <strong>Magasin type M, 3e cat.</strong>
         <p class="muted">Blocage ventilation traité — dossier conforme. Délai total : 10 j.</p>
       </div>
       <div class="card">
+        <div class="photo-card"><img loading="lazy" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=70" alt="Salle de spectacle type L"></div>
         <strong>Salle polyvalente type L</strong>
         <p class="muted">Essais MS 74 cadrés & levée de 6 réserves sous 30 j.</p>
       </div>
       <div class="card">
+        <div class="photo-card"><img loading="lazy" src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?auto=format&fit=crop&w=1200&q=70" alt="Restaurant type N"></div>
         <strong>Établissement type N</strong>
         <p class="muted">Clarification vérifications réglementaires + registre à jour.</p>
       </div>
@@ -236,23 +258,21 @@
       <details class="card" open>
         <summary><strong>Obligations incendie ERP 2025 : ce qui change</strong> — ventilation / traitement d’air, responsabilités DAAF</summary>
         <div>
-          <p><em>À retenir</em> : le règlement ERP (arrêté du 25/06/1980) reste la base. Les mises à jour 2025 précisent la <b>ventilation et le traitement d’air</b> (CH 28 à CH 36) et clarifient des responsabilités sur les <b>détecteurs de fumée (DAAF)</b> selon les cas (habitat inclusif).</p>
+          <p><em>À retenir</em> : le règlement ERP (arrêté du 25/06/1980) reste la base. Les mises à jour 2025 précisent la <b>ventilation et le traitement d’air</b> et clarifient des responsabilités sur les <b>détecteurs de fumée (DAAF)</b> selon les cas (habitat inclusif).</p>
           <h3>1) Cadre rapide</h3>
           <ul class="check">
-            <li>Règlement ERP — dispositions générales (arrêté du 25/06/1980). <a href="https://www.legifrance.gouv.fr/loda/id/LEGITEXT000020303557" target="_blank" rel="nofollow">Source</a> :contentReference[oaicite:0]{index=0}</li>
-            <li>Chapitre V — Chauffage, ventilation… (CH 29 à CH 36) actualisé 29/07/2025. <a href="https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000290033/LEGISCTA000020304212/" target="_blank" rel="nofollow">Source</a> :contentReference[oaicite:1]{index=1}</li>
+            <li>Règlement ERP — dispositions générales (arrêté du 25/06/1980). <a href="https://www.legifrance.gouv.fr/loda/id/LEGITEXT000020303557" target="_blank" rel="nofollow">Source</a></li>
+            <li>Chapitre V — Chauffage, ventilation… (CH 29 à CH 36) — version 2025.</li>
           </ul>
           <h3>2) Ventilation / traitement d’air : impacts pratiques</h3>
           <ul class="check">
-            <li>Caractéristiques CTA (CH 36 modifié 29/07/2025) et protections moteurs/ventilos. <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052008951" target="_blank" rel="nofollow">Arrêté du 29/07/2025</a> :contentReference[oaicite:2]{index=2}</li>
+            <li>Caractéristiques CTA et protections moteurs/ventilos.</li>
             <li>Documentation et maintenance traçables (contrats, essais, consignes d’exploitation).</li>
             <li>Points regardés en commission : implantation, compartimentage, coupures, cohérence désenfumage.</li>
           </ul>
           <h3>3) DAAF & habitat inclusif (contexte)</h3>
           <ul class="check">
-            <li>Décret 2025-516 (habitat inclusif) + art. D.281-7 CASF. <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000051714584/" target="_blank" rel="nofollow">Décret</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051716140/2025-06-25" target="_blank" rel="nofollow">CASF</a> :contentReference[oaicite:3]{index=3}</li>
-            <li>Décret 2025-518 (DAAF bâtiment d’habitation). <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000051714842/" target="_blank" rel="nofollow">Source</a> :contentReference[oaicite:4]{index=4}</li>
-            <li>Arrêté du 11/06/2025 (application) : échéances et périmètre. <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051714693" target="_blank" rel="nofollow">Source</a> :contentReference[oaicite:5]{index=5}</li>
+            <li>Habitat inclusif : obligations spécifiques (CASF, textes 06/2025).</li>
           </ul>
           <h3>4) Check-list d’action (7 points)</h3>
           <ol>
@@ -274,10 +294,10 @@
       <details class="card">
         <summary><strong>Commission de sécurité ERP : guide de préparation</strong> — pièces, essais, déroulé</summary>
         <div>
-          <p>Objectif : <b>réduire les réserves</b> et sécuriser l’ouverture/exploitation. La commission vérifie documents, essais et conformité aux dispositions générales ERP. <a href="https://www.legifrance.gouv.fr/loda/id/LEGITEXT000020303557" target="_blank" rel="nofollow">Références</a> :contentReference[oaicite:6]{index=6}</p>
+          <p>Objectif : <b>réduire les réserves</b> et sécuriser l’ouverture/exploitation. La commission vérifie documents, essais et conformité aux dispositions générales ERP. <a href="https://www.legifrance.gouv.fr/loda/id/LEGITEXT000020303557" target="_blank" rel="nofollow">Références</a></p>
           <h3>1) Dossier à constituer</h3>
           <ul class="check">
-            <li>SSI (type, contrats, rapports de réception/entretien), électricité, gaz, éclairage sécurité (EC), extincteurs, RIA.</li>
+            <li>SSI (type, contrats, rapports de réception/entretien), électricité, gaz, éclairage de sécurité, extincteurs, RIA.</li>
             <li>Plans à jour + plan d’intervention (MS 41), registre de sécurité, notices d’exploitation.</li>
             <li>Vérifs réglementaires (périodicités) + preuves (PV, attestations).</li>
           </ul>
@@ -305,10 +325,10 @@
           <p>Présentez des <b>preuves traçables</b> et distinguez ce qui relève du régime ERP de ce qui relève de l’<b>employeur</b> (Code du travail) s’il y a des salariés.</p>
           <h3>À structurer par domaines</h3>
           <ul class="check">
-            <li><b>SSI</b> : contrat, essais périodiques, rapports, modification/extension (si). </li>
+            <li><b>SSI</b> : contrat, essais périodiques, rapports, modification/extension (si).</li>
             <li><b>Extincteurs / RIA</b> : implantation, maintenance annuelle, contrôles pression.</li>
             <li><b>Électricité</b> : vérif périodique, mesures, levée d’écarts.</li>
-            <li><b>Gaz / cuisson / ventilation</b> : cohérence avec Chap. V (traitement d’air/CTA). <a href="https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000290033/LEGISCTA000020304586/" target="_blank" rel="nofollow">Réf. CH 29-36</a> :contentReference[oaicite:7]{index=7}</li>
+            <li><b>Gaz / cuisson / ventilation</b> : cohérence avec Chap. V (traitement d’air/CTA).</li>
           </ul>
           <h3>Preuves prêtes commission</h3>
           <ul class="check">
@@ -316,173 +336,5 @@
             <li>Tableau récapitulatif (domaine / périodicité / prochain contrôle / pièces).</li>
             <li>Photographies utiles (étiquettes, numéros, organes de coupure).</li>
           </ul>
-          <p><a class="cta" href="#verifications">Organiser mes vérifications</a></p>
-        </div>
-      </details>
-    </article>
-
-    <!-- Article 4 -->
-    <article id="blog-categories">
-      <details class="card">
-        <summary><strong>Catégories d’ERP : obligations clés</strong> — 1re à 5e, impacts concrets</summary>
-        <div>
-          <p>La catégorie découle des effectifs et de la nature de l’activité. Elle influe sur les exigences (dégagements, alarme, désenfumage, vérifications, etc.). Références : dispositions générales du règlement ERP. <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000045143487" target="_blank" rel="nofollow">GN 1</a> :contentReference[oaicite:8]{index=8}</p>
-          <h3>Impacts concrets</h3>
-          <ul class="check">
-            <li>Dimensionnement et nombre de dégagements.</li>
-            <li>Niveau d’alarme/SSI requis selon le type d’ERP.</li>
-            <li>Vérifications et essais : périodicités adaptées.</li>
-          </ul>
-          <p>En 2025, des précisions concernent la ventilation/traitement d’air : cohérence installation/exploitation et documentation (CTA, coupures, protections). <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052008951" target="_blank" rel="nofollow">Arrêté du 29/07/2025</a> :contentReference[oaicite:9]{index=9}</p>
-          <p><a class="cta" href="#audit-erp">Vérifier ma catégorie et mes obligations</a></p>
-        </div>
-      </details>
-    </article>
-
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <h2>Contact</h2>
-    <div class="grid2">
-      <div class="card">
-        <h3>Ignitech Conseil</h3>
-        <p>34 rue de l’Équerre<br>07130 Saint-Péray</p>
-        <p>Tél. <a href="tel:+33613620503">06&nbsp;13&nbsp;62&nbsp;05&nbsp;03</a><br>
-           Email <a href="mailto:contact@ignitech-conseil.fr">contact@ignitech-conseil.fr</a><br>
-           SIREN&nbsp;895023505</p>
-        <p class="muted">Zone : Drôme, Isère, Rhône, Vaucluse.</p>
-      </div>
-      <div class="card">
-        <h3>Demande de devis</h3>
-        <form action="https://formspree.io/f/mayvexample" method="POST">
-          <label>Nom / Organisation<br><input required name="name" style="width:100%;padding:10px;border:1px solid #dfe3ea;border-radius:10px"></label><br><br>
-          <label>Email<br><input type="email" required name="email" style="width:100%;padding:10px;border:1px solid #dfe3ea;border-radius:10px"></label><br><br>
-          <label>Message<br><textarea required name="message" rows="5" style="width:100%;padding:10px;border:1px solid #dfe3ea;border-radius:10px"></textarea></label><br><br>
-          <button class="cta" type="submit">Envoyer</button>
-          <p class="muted" style="margin-top:8px">En cliquant, vous acceptez d’être recontacté(e). Remplacez l’action du formulaire par votre outil si vous en avez un.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<a class="sticky-cta" href="#contact" aria-label="Demander un audit">Devis 24 h</a>
-
-<footer class="footer">
-  <div class="wrap">
-    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <p>&copy; <span id="y"></span> Ignitech Conseil — Tous droits réservés</p>
-      <p>Zones : Drôme • Isère • Rhône • Vaucluse — <a href="#faq">FAQ</a> — <a href="#blog">Blog</a></p>
-    </div>
-  </div>
-</footer>
-
-<!-- JSON-LD Organization + LocalBusiness + Services + Articles + FAQ -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":["Organization","LocalBusiness"],
-      "@id":"https://ignitech-conseil.fr/#org",
-      "name":"Ignitech Conseil",
-      "url":"https://ignitech-conseil.fr",
-      "logo":"https://ignitech-conseil.fr/logo.png",
-      "telephone":"+33613620503",
-      "email":"contact@ignitech-conseil.fr",
-      "identifier":[{"@type":"PropertyValue","propertyID":"SIREN","value":"895023505"}],
-      "address":{"@type":"PostalAddress","streetAddress":"34 rue de l’Équerre","postalCode":"07130","addressLocality":"Saint-Péray","addressCountry":"FR"},
-      "areaServed":["Drôme","Isère","Rhône","Vaucluse"]
-    },
-    {
-      "@type":"Service",
-      "name":"Audit sécurité incendie ERP",
-      "provider":{"@id":"https://ignitech-conseil.fr/#org"},
-      "areaServed":["Drôme","Isère","Rhône","Vaucluse"],
-      "offers":{"@type":"Offer","priceCurrency":"EUR","price":"990"}
-    },
-    {
-      "@type":"Service",
-      "name":"Préparation commission de sécurité ERP",
-      "provider":{"@id":"https://ignitech-conseil.fr/#org"}
-    },
-    {
-      "@type":"Service",
-      "name":"Vérifications réglementaires ERP",
-      "provider":{"@id":"https://ignitech-conseil.fr/#org"}
-    },
-    {
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Faut-il un audit avant chaque commission ?","acceptedAnswer":{"@type":"Answer","text":"Recommandé en cas de changements, réserves ou vétusté. L’audit prépare le dossier et réduit le risque de réserves."}},
-        {"@type":"Question","name":"Délais de remise du rapport ?","acceptedAnswer":{"@type":"Answer","text":"5 jours ouvrés en standard. Option urgence possible selon planning."}},
-        {"@type":"Question","name":"Intervention hors zone ?","acceptedAnswer":{"@type":"Answer","text":"Oui, sur devis partout en France (déplacements optimisés)."}},
-        {"@type":"Question","name":"Qu’inclut l’audit ?","acceptedAnswer":{"@type":"Answer","text":"Visite, relevés, analyse documentaire, photos annotées, citations d’articles, plan d’actions priorisé et briefing."}}
-      ]
-    },
-    {
-      "@type":"BlogPosting",
-      "headline":"Obligations incendie ERP 2025 : ce qui change",
-      "mainEntityOfPage":"https://ignitech-conseil.fr/#blog-obligations-2025",
-      "datePublished":"2025-08-14",
-      "author":{"@id":"https://ignitech-conseil.fr/#org"},
-      "about":["ventilation","traitement d’air","ERP","DAAF"],
-      "citation":[
-        "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052008951",
-        "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000020303557",
-        "https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000290033/LEGISCTA000020304212/",
-        "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000051714842/",
-        "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000051714584/",
-        "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051714693"
-      ]
-    },
-    {
-      "@type":"BlogPosting",
-      "headline":"Commission de sécurité ERP : guide de préparation",
-      "mainEntityOfPage":"https://ignitech-conseil.fr/#blog-commission",
-      "datePublished":"2025-08-14",
-      "author":{"@id":"https://ignitech-conseil.fr/#org"},
-      "citation":["https://www.legifrance.gouv.fr/loda/id/LEGITEXT000020303557"]
-    },
-    {
-      "@type":"BlogPosting",
-      "headline":"Vérifications réglementaires ERP : la check-list",
-      "mainEntityOfPage":"https://ignitech-conseil.fr/#blog-checklist",
-      "datePublished":"2025-08-14",
-      "author":{"@id":"https://ignitech-conseil.fr/#org"},
-      "citation":["https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000290033/LEGISCTA000020304586/"]
-    },
-    {
-      "@type":"BlogPosting",
-      "headline":"Catégories d’ERP : obligations clés",
-      "mainEntityOfPage":"https://ignitech-conseil.fr/#blog-categories",
-      "datePublished":"2025-08-14",
-      "author":{"@id":"https://ignitech-conseil.fr/#org"},
-      "citation":[
-        "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000045143487",
-        "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052008951"
-      ]
-    }
-  ]
-}
-</script>
-
-<script>
-  // année dynamique
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-<!--
-Notes sources (cliquables dans le blog) :
-- Arrêté du 25/06/1980, dispositions générales ERP. Source Legifrance. :contentReference[oaicite:10]{index=10}
-- Chapitre V (chauffage, ventilation, etc.) et CH29-36 actualisés 29/07/2025. :contentReference[oaicite:11]{index=11}
-- Arrêté du 29/07/2025 modifiant des articles ventilation/CTA. :contentReference[oaicite:12]{index=12}
-- Décret 2025-516 (habitat inclusif) & CASF D.281-7. :contentReference[oaicite:13]{index=13}
-- Décret 2025-518 (DAAF bâtiment d’habitation). :contentReference[oaicite:14]{index=14}
-- Arrêté du 11/06/2025 (application habitat inclusif). :contentReference[oaicite:15]{index=15}
--->
-</body>
-</html>
+          <p><a class="cta" href="#verifications">Or
 
