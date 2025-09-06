@@ -1,53 +1,202 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ignitech Conseil — Conseil & Ingénierie</title>
-  <meta name="description" content="Ignitech Conseil accompagne vos projets en ingénierie, audits et conformité réglementaire (ERP sécurité incendie)." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta charset="utf-8">
+  <title>Ignitech Conseil — Audits ERP & conformité incendie</title>
+  <meta name="description" content="Cabinet de conseil en prévention incendie pour ERP. Audits, préparation de commission de sécurité, dossiers SSI, notices de sécurité. Intervention rapide depuis Saint-Péray.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="https://ignitech-conseil.fr/">
+  <meta name="robots" content="index,follow">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Ignitech Conseil — Conseil & Ingénierie" />
-  <meta property="og:description" content="AMO, audits, conformité ERP, et pilotage de projets techniques." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://votre-domaine-ou-github.io/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ignitech Conseil — Prévention incendie ERP">
+  <meta property="og:description" content="Audits ERP, préparation de commission, dossiers SSI, notices. Drôme–Ardèche et alentours.">
+  <meta property="og:url" content="https://ignitech-conseil.fr/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop">
+
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ignitech Conseil — Conseil & Ingénierie" />
-  <meta name="twitter:description" content="AMO, audits, conformité ERP, et pilotage de projets techniques." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f172a'/%3E%3Cpath d='M18 34l8 8 20-20' stroke='%23fff' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ignitech Conseil — Prévention incendie ERP">
+  <meta name="twitter:description" content="Audits ERP, préparation de commission, dossiers SSI, notices.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ignitech Conseil",
+    "legalName": "Ignitech Conseil",
+    "identifier": "SIREN 895023505",
+    "url": "https://ignitech-conseil.fr/",
+    "telephone": "+33 7 69 26 14 29",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "34 rue de l'Équerre",
+      "postalCode": "07130",
+      "addressLocality": "Saint-Péray",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Auvergne-Rhône-Alpes",
+    "sameAs": []
+  }
+  </script>
+
   <style>
     :root{
-      --bg:#0b1020; --card:#111633; --muted:#94a3b8; --text:#e5e7eb; --accent:#22d3ee; --accent-2:#60a5fa;
-      --ring:0 0 0 3px rgba(34,211,238,.35)
+      --bg:#0b0c10;
+      --card:#13151a;
+      --muted:#9aa3af;
+      --text:#eef2f7;
+      --accent:#f97316;
+      --accent-2:#22c55e;
+      --max:1100px;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      color:var(--text); background:
-        radial-gradient(1200px 600px at 90% -10%, rgba(96,165,250,.15), transparent 60%),
-        radial-gradient(900px 500px at -10% 110%, rgba(34,211,238,.12), transparent 60%),
-        var(--bg);
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);background:rgba(11,12,16,.7);border-bottom:1px solid #1f2430;z-index:20}
+    .wrap{max-width:var(--max);margin:auto;padding:16px}
+    .row{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .badge{font-size:12px;padding:2px 8px;border:1px solid #273043;border-radius:999px;color:var(--muted)}
+    nav a{font-weight:600;padding:8px 10px;color:var(--muted)}
+    nav a:hover{color:var(--text)}
+    .btn{display:inline-block;background:var(--accent);color:#0b0c10;font-weight:800;padding:12px 18px;border-radius:10px;box-shadow:var(--shadow)}
+    .btn.sec{background:#1f2937;color:var(--text)}
+    .hero{padding:64px 16px 40px}
+    .hero .inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+    .card{background:var(--card);border:1px solid #1f2430;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    h1{font-size:clamp(28px,4vw,40px);margin:0 0 10px}
+    h2{font-size:clamp(20px,3vw,28px);margin:0 0 12px}
+    p{margin:0 0 10px;color:#d6dbe3}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid .card{min-height:180px}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
+    .photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .photos img{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid #1f2430}
+    footer{margin-top:40px;border-top:1px solid #1f2430}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .muted{color:var(--muted);font-size:14px}
+    @media (max-width:900px){
+      .hero .inner{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .photos{grid-template-columns:1fr 1fr}
+      .cols{grid-template-columns:1fr}
     }
-    a{color:inherit; text-decoration:none}
-    .btn{display:inline-block; padding:.9rem 1.1rem; border-radius:14px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#071018; font-weight:700}
-    .btn:hover{filter:brightness(1.06)}
-    .btn:focus-visible{outline:none; box-shadow:var(--ring)}
-    header{position:sticky; top:0; backdrop-filter:saturate(1.2) blur(10px); background:rgba(11,16,32,.6); border-bottom:1px solid rgba(148,163,184,.15); z-index:10}
-    .wrap{max-width:1050px; margin:0 auto; padding:1rem 1.25rem}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem}
-    .brand{display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.3px}
-    .logo{inline-size:34px; block-size:34px; border-radius:9px; background:#0f172a; display:grid; place-items:center; box-shadow:0 8px 30px rgba(2,6,23,.5)}
-    .logo svg{width:70%; height:70%}
-    .menu{display:flex; gap:1rem; align-items:center}
-    .menu a{padding:.5rem .7rem; border-radius:10px; color:var(--muted)}
-    .menu a:hover{background:rgba(148,163,184,.12); color:var(--text)}
-    main{display:grid; gap:4rem}
-    .hero{padding:4.5rem 1.25rem 2rem}
-    .hero .grid{display:grid; gap:1.5rem; grid-template-columns:1.1fr .9fr}
-    .badge{display:inline-flex; align-items:center; gap:.5rem; color:#cffafe; background:rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.35); padding:.35rem .6rem; border-radius:999px; font-size:.85rem}
-    h1{margin:.6rem 0 1rem; font-size:clamp(1.9rem,4.2vw,3rem); line-height:1.1}
-    .lead{color:var(--muted); max-width:
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap row">
+      <div class="brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h6l2 4h8l-2 4h-8l-2 4H4l2-4-2-4 2-4Z" stroke="#f97316" stroke-width="1.6" /></svg>
+        <span>Ignitech Conseil</span>
+        <span class="badge">Prévention incendie ERP</span>
+      </div>
+      <nav>
+        <a href="#prestations">Prestations</a>
+        <a href="#methodo">Méthode</a>
+        <a href="#photos">Photos</a>
+        <a class="btn" href="tel:+33769261429">Appeler — 07&nbsp;69&nbsp;26&nbsp;14&nbsp;29</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="inner">
+      <div class="card">
+        <h1>Audits ERP & conformité incendie</h1>
+        <p>Rapports exploitables, actions priorisées, appui aux commissions de sécurité. Intervention depuis Saint-Péray.</p>
+        <p class="muted">Adresse&nbsp;: 34&nbsp;rue de l'Équerre, 07130&nbsp;Saint-Péray • SIREN&nbsp;895023505</p>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <a class="btn" href="tel:+33769261429">Joindre le cabinet</a>
+          <a class="btn sec" href="https://maps.google.com/?q=34%20rue%20de%20l%27%C3%89querre%2007130%20Saint-P%C3%A9ray" target="_blank" rel="noopener">Itinéraire</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Domaines d’intervention</h2>
+        <ul class="list">
+          <li>Audit de conformité ERP (1er groupe & 5e)</li>
+          <li>Préparation et accompagnement en commission de sécurité</li>
+          <li>Dossiers SSI et mises à jour du dossier d’identité</li>
+          <li>Notices de sécurité et plans d’intervention</li>
+          <li>Accessibilité et consignes d’évacuation</li>
+          <li>Vérifications réglementaires, suivi des levées de réserves</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="prestations" class="wrap">
+    <div class="grid">
+      <div class="card">
+        <h2>Audit ERP</h2>
+        <p>Visite sur site, contrôle documentaire, grille de conformité, plan d’actions classé par priorité.</p>
+      </div>
+      <div class="card">
+        <h2>Commission de sécurité</h2>
+        <p>Dossier prêt, présence le jour J, échanges avec le SDIS et la mairie, formalisation des engagements.</p>
+      </div>
+      <div class="card">
+        <h2>Dossier SSI & notices</h2>
+        <p>Mise en conformité documentaire&nbsp;: SSI, notices, plans, registres, procédures d’exploitation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="methodo" class="wrap" style="margin-top:22px">
+    <div class="card">
+      <h2>Méthode</h2>
+      <div class="cols">
+        <div>
+          <p><strong>1) Cadrage</strong> • périmètre, risques, échéances. Collecte des pièces.</p>
+          <p><strong>2) Contrôle</strong> • terrain + documents. Références&nbsp;: Code de la construction, Règlement ERP, arrêtés et normes applicables.</p>
+          <p><strong>3) Livraison</strong> • rapport clair, jalons, priorités, modèles opérationnels.</p>
+        </div>
+        <div class="muted">
+          <p><strong>Références de travail</strong></p>
+          <ul class="list">
+            <li>Legifrance.gouv.fr</li>
+            <li>Interieur.gouv.fr — DGSCGC</li>
+            <li>SiteSecurite.com</li>
+            <li>Textes officiels et normes citées dans les rapports</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos" class="wrap" style="margin-top:22px">
+    <h2>En images</h2>
+    <div class="photos" aria-label="Galerie professionnelle">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop" alt="Réunion de conseil, documents et checklist sur table">
+      <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600&auto=format&fit=crop" alt="Plans et ordinateur portable utilisés pour un audit">
+      <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop" alt="Entretien professionnel avec un responsable d’établissement">
+    </div>
+    <p class="muted" style="margin-top:8px">Photos libres de droits via Unsplash, usage illustratif.</p>
+  </section>
+
+  <footer class="wrap">
+    <div class="cols" style="padding:16px 0">
+      <div>
+        <p><strong>Ignitech Conseil</strong></p>
+        <p class="muted">34&nbsp;rue de l'Équerre, 07130&nbsp;Saint-Péray</p>
+        <p><a href="tel:+33769261429">07&nbsp;69&nbsp;26&nbsp;14&nbsp;29</a></p>
+      </div>
+      <div class="muted">
+        <p>SIREN&nbsp;895023505</p>
+        <p>Prestations de conseil en prévention incendie pour ERP.</p>
+        <p>Mentions légales simplifiées. Pas de collecte de cookies.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
