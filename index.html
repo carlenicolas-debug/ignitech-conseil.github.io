@@ -274,4 +274,59 @@
           </ul>
           <h3>4) Check-list d’action (7 points)</h3>
           <ol>
-            <li>Mettre à jour la
+            <li>Mettre à jour la documentation incendie et les contrats.</li>
+          </ol>
+        </div>
+      </details>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <form id="contact-form" action="https://formspree.io/f/xleokjnz" method="POST">
+      <div style="margin-bottom:16px">
+        <label class="label" for="name">Nom</label>
+        <input class="input" type="text" id="name" name="name" required>
+      </div>
+      <div style="margin-bottom:16px">
+        <label class="label" for="email">Email</label>
+        <input class="input" type="email" id="email" name="email" required>
+      </div>
+      <div style="margin-bottom:16px">
+        <label class="label" for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button class="cta" type="submit">Envoyer</button>
+      <p id="form-status" class="muted" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    const data = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        status.textContent = 'Merci, votre message a été envoyé.';
+        contactForm.reset();
+      } else {
+        status.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+      }
+    } catch (err) {
+      status.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+    }
+  });
+</script>
+
+</body>
+</html>
