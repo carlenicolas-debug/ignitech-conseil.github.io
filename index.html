@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
@@ -6,170 +5,366 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO STRATÉGIQUE -->
-    <title>Ignitech Conseil | Audit Sécurité Incendie ERP 5ème Catégorie</title>
-    <meta name="description" content="Expert PRV2 spécialisé en conformité incendie pour ERP de 5ème catégorie. Audit, registre de sécurité et préparation commission. Intervention Drôme, Isère, Rhône, Vaucluse.">
-    <meta name="keywords" content="audit incendie ERP, 5ème catégorie, conformité incendie, Drôme, Isère, commission de sécurité, registre de sécurité, PRV2">
+    <title>Ignitech Conseil | Audit Sécurité Incendie ERP & Conformité 5ème Catégorie</title>
+    <meta name="description" content="Expert PRV2. Audit incendie, registre de sécurité et préparation commission pour ERP de 5ème catégorie. Guide gratuit inclus. Intervention Drôme, Isère, Rhône, Vaucluse.">
     
-    <!-- TAILWIND CSS -->
+    <!-- TAILWIND CSS & FONTS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- CONFIGURATION DU DESIGN -->
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .bg-brand { background-color: #0f172a; } 
-        .text-brand { color: #0f172a; }
-        .accent-red { background-color: #e11d48; } 
+        .bg-brand-dark { background-color: #0f172a; } /* Bleu Nuit Profond */
+        .text-brand-dark { color: #0f172a; }
+        .bg-brand-blue { background-color: #2563eb; } /* Bleu Institutionnel */
+        .text-brand-blue { color: #2563eb; }
+        .bg-accent-red { background-color: #dc2626; } /* Rouge Sécurité */
+        
+        /* Effet de verre pour la nav */
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        
+        /* Styles spécifiques pour le guide */
+        .guide-box { border-left: 4px solid #2563eb; background-color: #f8fafc; padding: 1.5rem; margin-top: 1rem; border-radius: 0 0.5rem 0.5rem 0; }
+        .guide-alert { border-left: 4px solid #dc2626; background-color: #fef2f2; padding: 1.5rem; margin-top: 1rem; border-radius: 0 0.5rem 0.5rem 0; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
 
-    <!-- NAVIGATION -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <!-- NAVIGATION PREMIUM -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-slate-200 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-brand tracking-tight">IGNITECH <span class="text-slate-500 font-light">CONSEIL</span></span>
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Logo Text -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-extrabold text-brand-dark tracking-tight leading-none">IGNITECH</span>
+                        <span class="text-sm font-medium text-slate-500 tracking-widest uppercase">Conseil & Prévention</span>
+                    </div>
                 </div>
-                <div class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#accueil" class="hover:text-blue-600 transition">Accueil</a>
-                    <a href="#expertise-5" class="hover:text-blue-600 transition font-bold text-red-600">Spécial 5e Cat.</a>
-                    <a href="#prestations" class="hover:text-blue-600 transition">Prestations</a>
-                    <a href="#tarifs" class="hover:text-blue-600 transition">Tarifs</a>
-                    <a href="#contact" class="accent-red text-white px-4 py-2 rounded-md hover:bg-red-700 transition">Devis 24h</a>
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#accueil" class="text-slate-600 hover:text-brand-blue transition">Accueil</a>
+                    <a href="#guide-expert" class="text-slate-600 hover:text-brand-blue transition">Guide 5ème Cat.</a>
+                    <a href="#prestations" class="text-slate-600 hover:text-brand-blue transition">Prestations</a>
+                    <a href="#tarifs" class="text-slate-600 hover:text-brand-blue transition">Tarifs</a>
+                    <a href="#contact" class="bg-brand-dark text-white px-5 py-2.5 rounded-lg hover:bg-slate-800 transition shadow-lg shadow-slate-200/50">Devis Gratuit</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header id="accueil" class="relative bg-brand py-24 lg:py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="lg:w-2/3">
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-4">Expertise PRV2 - 23 ans d'expérience</span>
-                <h1 class="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                    Sécurisez votre exploitation, <br><span class="text-blue-400">protégez votre responsabilité.</span>
-                </h1>
-                <p class="text-xl text-slate-300 mb-8 leading-relaxed">
-                    Nous transformons la complexité réglementaire en un plan d’actions simple. Spécialiste de la 5ème catégorie dans la Drôme, l'Isère, le Rhône et le Vaucluse.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="accent-red text-white text-center px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition transform hover:-translate-y-1">Obtenir mon audit préventif</a>
-                    <a href="#expertise-5" class="bg-white/10 text-white text-center px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition">Voir l'offre 5ème Catégorie</a>
-                </div>
+    <!-- HERO SECTION : AUTORITÉ & CONFIANCE -->
+    <header id="accueil" class="relative bg-brand-dark pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-700/50 text-blue-300 text-xs font-bold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Expertise PRV2 Certifiée
+            </div>
+            
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-8 max-w-4xl mx-auto">
+                La conformité incendie <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">sans paralyser votre activité.</span>
+            </h1>
+            
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Nous transformons le jargon réglementaire en plan d'actions clair. Spécialiste des ERP de 5ème catégorie en Drôme, Isère, Rhône et Vaucluse.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-brand-blue text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition shadow-xl shadow-blue-900/20 transform hover:-translate-y-1">
+                    Sécuriser mon établissement
+                </a>
+                <a href="#guide-expert" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">
+                    Lire le guide exploitant
+                </a>
             </div>
         </div>
-        <div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-blue-500/10 to-transparent hidden lg:block"></div>
+        
+        <!-- Trust Bar -->
+        <div class="absolute bottom-0 w-full bg-slate-900/50 border-t border-slate-800 py-6">
+            <div class="max-w-7xl mx-auto px-4 flex justify-center gap-8 md:gap-16 text-slate-500 font-semibold text-sm uppercase tracking-widest">
+                <span>Commerces</span>
+                <span>•</span>
+                <span>Hôtellerie</span>
+                <span>•</span>
+                <span>Bureaux</span>
+                <span>•</span>
+                <span>Industrie</span>
+            </div>
+        </div>
     </header>
 
-    <!-- CHIFFRES CLÉS -->
-    <section class="bg-white border-b border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-around gap-8 text-center">
-            <div><div class="text-3xl font-bold text-brand">5 jours</div><div class="text-sm text-slate-500 uppercase tracking-wide">Remise du rapport</div></div>
-            <div><div class="text-3xl font-bold text-brand">PRV2</div><div class="text-sm text-slate-500 uppercase tracking-wide">Certification Expert</div></div>
-            <div><div class="text-3xl font-bold text-brand">100%</div><div class="text-sm text-slate-500 uppercase tracking-wide">Conformité visée</div></div>
-            <div><div class="text-3xl font-bold text-brand">Sud-Est</div><div class="text-sm text-slate-500 uppercase tracking-wide">Zone d'intervention</div></div>
-        </div>
-    </section>
-
-    <!-- PAGE PILIER : ERP 5ème CATÉGORIE -->
-    <section id="expertise-5" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- SECTION GUIDE EXPERT (CONTENU RICHE) -->
+    <section id="guide-expert" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-brand mb-4">Spécialiste ERP 5ème Catégorie</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Commerces, restaurants, gîtes, bureaux : des solutions pragmatiques pour les petits établissements.</p>
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Guide Pratique de l'Exploitant</h2>
+                <div class="w-20 h-1 bg-brand-blue mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                        <h3 class="font-bold text-xl mb-3 flex items-center text-blue-600 font-semibold">Respect des articles PE & PO</h3>
-                        <p class="text-slate-600">Nous appliquons les dispositions spécifiques aux petits établissements pour éviter les surcoûts inutiles tout en garantissant une sécurité totale.</p>
+            <article class="prose prose-lg prose-slate mx-auto">
+                <h3 class="text-2xl font-bold text-brand-dark mb-6">Gérants de 5ème catégorie : 5 points de contrôle essentiels pour sécuriser votre exploitation</h3>
+                
+                <p class="text-slate-600 leading-relaxed mb-8">
+                    Contrairement à une idée reçue, être classé en <strong>5ème catégorie</strong> ne signifie pas une absence de contraintes réglementaires. Si le passage de la commission de sécurité n'est pas systématique pour tous, la responsabilité pénale du dirigeant, elle, est engagée dès le premier jour d'ouverture. En cas de sinistre ou de contrôle inopiné, le respect des <strong>articles PE</strong> (Petits Établissements) du règlement de sécurité incendie est votre seule protection.
+                </p>
+
+                <div class="space-y-12">
+                    <!-- Point 1 -->
+                    <div class="relative pl-8 md:pl-0">
+                        <div class="hidden md:flex absolute -left-12 top-0 w-10 h-10 bg-brand-dark text-white rounded-full items-center justify-center font-bold">1</div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-3">La vacuité des dégagements</h4>
+                        <p class="text-slate-600">C’est le point de contrôle n°1 lors d’une inspection. Vos issues de secours et vos cheminements ne doivent être obstrués par aucun stockage, même temporaire (cartons, présentoirs, mobilier).</p>
+                        <div class="guide-box border-brand-blue">
+                            <strong class="text-brand-blue block mb-1 font-bold uppercase text-xs tracking-wider">Le point technique</strong>
+                            <p class="m-0 text-sm text-slate-700">La largeur de passage (unité de passage) doit être strictement respectée pour permettre l'évacuation rapide du public et l'intervention des secours.</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                        <h3 class="font-bold text-xl mb-3 flex items-center text-blue-600 font-semibold">Préparation Commission</h3>
-                        <p class="text-slate-600">Zéro surprise le jour J. Nous identifions les points bloquants avant le passage des autorités.</p>
+
+                    <!-- Point 2 -->
+                    <div class="relative pl-8 md:pl-0">
+                        <div class="hidden md:flex absolute -left-12 top-0 w-10 h-10 bg-brand-dark text-white rounded-full items-center justify-center font-bold">2</div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-3">La vérification périodique des installations techniques</h4>
+                        <p class="text-slate-600">En 5ème catégorie, l'exploitant doit s'assurer du bon fonctionnement des installations électriques et de gaz.</p>
+                        <div class="guide-alert border-l-4 border-orange-500 bg-orange-50">
+                            <strong class="text-orange-700 block mb-1 font-bold uppercase text-xs tracking-wider">L'obligation légale</strong>
+                            <p class="m-0 text-sm text-slate-700">Vous devez faire procéder à une vérification technique annuelle par un organisme agréé ou un technicien compétent. Les rapports (sans réserves majeures) doivent être annexés à votre dossier de sécurité.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="relative pl-8 md:pl-0">
+                        <div class="hidden md:flex absolute -left-12 top-0 w-10 h-10 bg-brand-dark text-white rounded-full items-center justify-center font-bold">3</div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-3">Les moyens d'extinction et d'alerte</h4>
+                        <p class="text-slate-600">Même pour un petit ERP, un dispositif d'alerte (type 4 au minimum) est indispensable.</p>
+                        <div class="guide-box">
+                            <strong class="text-brand-blue block mb-1 font-bold uppercase text-xs tracking-wider">Conseil d'expert PRV2</strong>
+                            <p class="m-0 text-sm text-slate-700">Un extincteur à eau pulvérisée de 6 litres pour 200 m² est la base. Assurez-vous que l'étiquette de vérification annuelle est à jour. Une maintenance périmée est une faute de gestion caractérisée.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="relative pl-8 md:pl-0">
+                        <div class="hidden md:flex absolute -left-12 top-0 w-10 h-10 bg-brand-dark text-white rounded-full items-center justify-center font-bold">4</div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-3">Le Registre de Sécurité : Votre preuve administrative</h4>
+                        <p class="text-slate-600">C’est le journal de bord de votre établissement. Il doit répertorier toutes les vérifications, les formations du personnel et les travaux effectués.</p>
+                        <div class="guide-alert">
+                            <strong class="text-red-700 block mb-1 font-bold uppercase text-xs tracking-wider">Le risque majeur</strong>
+                            <p class="m-0 text-sm text-slate-700">Un registre vide ou absent est interprété par les autorités comme un défaut total de surveillance, aggravant votre responsabilité en cas d'incident.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 5 -->
+                    <div class="relative pl-8 md:pl-0">
+                        <div class="hidden md:flex absolute -left-12 top-0 w-10 h-10 bg-brand-dark text-white rounded-full items-center justify-center font-bold">5</div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-3">Le cas spécifique des locaux à sommeil (Type PO)</h4>
+                        <p class="text-slate-600">Si vous exploitez un gîte ou une petite structure de soins (articles PO), la réglementation est nettement plus stricte. La détection automatique de fumée et le compartimentage sont des points de vigilance absolue.</p>
+                        <div class="guide-alert">
+                            <strong class="text-red-700 block mb-1 font-bold uppercase text-xs tracking-wider">Prudence</strong>
+                            <p class="m-0 text-sm text-slate-700">C’est ici que les sanctions de la commission de sécurité sont les plus fréquentes.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- OFFRE -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-600 relative">
-                    <div class="absolute top-0 right-0 accent-red text-white text-xs font-bold px-4 py-1 rounded-bl-lg uppercase tracking-widest">Offre "Sérénité"</div>
-                    <h3 class="text-2xl font-bold text-brand mb-4">Audit de Conformité Flash</h3>
-                    <div class="text-4xl font-black text-blue-600 mb-6">490 € <span class="text-lg text-slate-400 font-normal">HT</span></div>
-                    <ul class="space-y-4 mb-8 text-slate-700">
-                        <li>✓ Visite complète sur site</li>
-                        <li>✓ Rapport PDF illustré</li>
-                        <li>✓ Plan d'actions priorisé</li>
-                        <li>✓ Délais : 5 jours ouvrés</li>
+                <div class="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-200 text-center">
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Conclusion</h3>
+                    <p class="text-slate-600 mb-6">La sécurité incendie ne doit pas être une source de stress, mais une composante maîtrisée de votre gestion. Un audit préventif permet d'identifier les non-conformités avant qu'elles ne deviennent des problèmes critiques.</p>
+                    <div class="inline-block">
+                        <p class="font-bold text-brand-blue mb-2">Besoin d'un diagnostic rapide ?</p>
+                        <a href="#tarifs" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent-red hover:bg-red-700 transition">
+                            Voir notre offre Audit 5ème Cat.
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECTION TARIFS & OFFRE PHARE -->
+    <section id="tarifs" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Une tarification transparente</h2>
+                <p class="text-slate-600 text-lg">Pas de devis à rallonge. Nous transformons le jargon réglementaire en un plan d'actions simple et priorisé pour un tarif forfaitaire.</p>
+            </div>
+
+            <div class="max-w-lg mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 transform hover:scale-105 transition duration-300">
+                <div class="bg-brand-dark py-4 text-center">
+                    <span class="text-blue-200 font-bold uppercase tracking-widest text-sm">Offre Spéciale 5ème Catégorie</span>
+                </div>
+                <div class="p-10">
+                    <div class="flex justify-center items-baseline mb-6">
+                        <span class="text-5xl font-extrabold text-brand-dark">490€</span>
+                        <span class="text-xl text-slate-500 ml-2">HT</span>
+                    </div>
+                    <p class="text-center text-slate-600 mb-8 font-medium">Audit complet "Sérénité" sous 5 jours</p>
+                    
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-700">Visite complète sur site</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-700">Rapport PDF illustré (photos annotées)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-700">Plan d'actions priorisé (court/moyen terme)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-700">Livraison garantie sous 5 jours ouvrés</span>
+                        </li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">Demander cet audit</a>
+                    <a href="#contact" class="block w-full bg-brand-blue text-white text-center font-bold py-4 rounded-xl hover:bg-blue-600 transition shadow-lg">
+                        Demander cet audit
+                    </a>
+                </div>
+                <div class="px-10 py-4 bg-slate-50 border-t border-slate-100 text-center">
+                    <p class="text-xs text-slate-500">Pour Drôme, Isère, Rhône, Vaucluse. Hors frais de déplacement au-delà de 50km.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRESTATIONS -->
+    <!-- AUTRES PRESTATIONS (RESUMÉ) -->
     <section id="prestations" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-brand text-center mb-16">Nos Prestations</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-8 border border-slate-100 rounded-xl">
-                    <h3 class="font-bold text-xl mb-4">Audit & Diagnostic</h3>
-                    <p class="text-slate-600 text-sm">Analyse documentaire, relevés sur site, citations d'articles précis.</p>
+            <h2 class="text-3xl font-bold text-brand-dark text-center mb-16">Expertise Globale ERP</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-2xl">📋</div>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark">Préparation Commission</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Organisation du dossier, vérification des essais MS 74 avant le jour J, et assistance à la levée des réserves post-visite.</p>
                 </div>
-                <div class="p-8 border border-slate-100 rounded-xl">
-                    <h3 class="font-bold text-xl mb-4">Préparation Commission</h3>
-                    <p class="text-slate-600 text-sm">Organisation du dossier et levée de réserves post-visite.</p>
+                <div class="p-8 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-2xl">🏗️</div>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark">Assistance à Maîtrise d'Ouvrage</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Accompagnement dès la conception des plans pour garantir la conformité avant le début des travaux.</p>
                 </div>
-                <div class="p-8 border border-slate-100 rounded-xl">
-                    <h3 class="font-bold text-xl mb-4">Registre & Plans</h3>
-                    <p class="text-slate-600 text-sm">Mise à jour du registre de sécurité et conception de plans.</p>
+                <div class="p-8 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-2xl">📚</div>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark">Gestion Administrative</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Mise à jour du registre de sécurité, rédaction des consignes, et suivi des périodicités de maintenance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT FONCTIONNEL -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-brand mb-8">Démarrons votre mise en conformité</h2>
+    <!-- CONTACT & FORMULAIRE -->
+    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-red-600/10 blur-3xl"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Contactez l'expert PRV2</h2>
+                <p class="text-slate-400">Réponse garantie sous 24h ouvrées.</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-12 text-left bg-slate-50 p-8 rounded-3xl border border-slate-200">
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Coordonnées</h3>
-                    <ul class="space-y-4">
-                        <li class="font-bold text-blue-600">📞 07 69 26 14 29</li>
-                        <li>✉️ contact@ignitech-conseil.fr</li>
-                        <li>📍 Drôme, Isère, Rhône, Vaucluse</li>
-                    </ul>
-                    <div class="mt-8 pt-8 border-t border-slate-200 text-xs text-slate-400 italic">
-                        SIREN 895023505 | Expertise PRV2
+            <div class="grid md:grid-cols-2 gap-12 bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/10">
+                <!-- Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 text-white">Coordonnées Directes</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-center group">
+                                <span class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4 shadow-lg shadow-blue-900/50 group-hover:scale-110 transition">📞</span>
+                                <div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wide">Téléphone</div>
+                                    <div class="font-bold text-lg">07 69 26 14 29</div>
+                                </div>
+                            </li>
+                            <li class="flex items-center group">
+                                <span class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition">✉️</span>
+                                <div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wide">Email</div>
+                                    <div class="font-bold text-lg">contact@ignitech-conseil.fr</div>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mr-4 shadow-lg">📍</span>
+                                <div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wide">Zone d'intervention</div>
+                                    <div class="text-sm">Drôme, Isère, Rhône, Vaucluse</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-8 border-t border-white/10">
+                        <div class="text-xs text-slate-500">SIREN 895023505</div>
+                        <div class="font-bold text-slate-300 mt-1">IGNITECH CONSEIL</div>
                     </div>
                 </div>
 
-                <!-- Formulaire avec script d'envoi par email -->
+                <!-- Formulaire -->
                 <form id="contactForm" class="space-y-4">
-                    <input type="text" id="name" placeholder="Votre Nom / Établissement" required class="w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" id="email" placeholder="Votre Email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-blue-500">
-                    <select id="type" class="w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="5ème Catégorie">ERP 5ème Catégorie</option>
-                        <option value="Autre Catégorie">Autre ERP (1 à 4)</option>
-                    </select>
-                    <textarea id="message" placeholder="Votre besoin spécifique..." rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Votre Nom / Société</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 outline-none transition placeholder-slate-500" placeholder="Ex: Hôtel du Parc">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Email</label>
+                        <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 outline-none transition placeholder-slate-500" placeholder="contact@votre-etablissement.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Type de demande</label>
+                        <select id="type" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                            <option value="5ème Catégorie">Audit ERP 5ème Catégorie</option>
+                            <option value="Autre Catégorie">Autre ERP (1 à 4)</option>
+                            <option value="Question Générale">Question / Renseignement</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Message</label>
+                        <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 outline-none transition placeholder-slate-500" placeholder="Bonjour, je souhaite mettre aux normes mon établissement..."></textarea>
+                    </div>
                     
-                    <button type="submit" class="w-full accent-red text-white font-bold py-4 rounded-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                        Envoyer ma demande par Email
+                    <button type="submit" class="w-full bg-accent-red text-white font-bold py-4 rounded-lg hover:bg-red-600 transition shadow-lg shadow-red-900/30 transform hover:-translate-y-1">
+                        Envoyer ma demande
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-brand text-slate-400 py-12 text-center text-sm">
-        <p>© 2026 Ignitech Conseil — Expertise PRV2</p>
+    <!-- FOOTER PRO -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 font-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <span class="text-2xl font-extrabold text-white tracking-tight">IGNITECH</span>
+                <p class="mt-4 text-slate-500 leading-relaxed max-w-sm">
+                    Cabinet de conseil indépendant spécialisé en sécurité incendie. Nous accompagnons les exploitants d'ERP vers la conformité réglementaire avec pragmatisme et rigueur.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Services</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#guide-expert" class="hover:text-blue-400 transition">Audit 5ème Catégorie</a></li>
+                    <li><a href="#prestations" class="hover:text-blue-400 transition">Préparation Commission</a></li>
+                    <li><a href="#prestations" class="hover:text-blue-400 transition">Mise en conformité</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Légal</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Mentions Légales</a></li>
+                    <li><a href="#" class="hover:text-white transition">Politique de Confidentialité</a></li>
+                    <li><a href="#" class="hover:text-white transition">CGV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
+            &copy; 2026 Ignitech Conseil. Tous droits réservés.
+        </div>
     </footer>
 
-    <!-- SCRIPT DE FONCTIONNALITÉ FORMULAIRE -->
+    <!-- SCRIPT FONCTIONNEL -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -179,10 +374,9 @@
             const type = document.getElementById('type').value;
             const message = document.getElementById('message').value;
             
-            const subject = `Demande de devis - ${type} - ${name}`;
-            const body = `Nom: ${name}\nEmail: ${email}\nType d'ERP: ${type}\n\nMessage:\n${message}`;
+            const subject = `Demande Ignitech - ${type} - ${name}`;
+            const body = `Nom: ${name}\nEmail: ${email}\nType: ${type}\n\nMessage:\n${message}`;
             
-            // Ouvre le client mail de l'utilisateur
             window.location.href = `mailto:contact@ignitech-conseil.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
     </script>
