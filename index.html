@@ -140,6 +140,9 @@ section{padding:4.5rem 0}.sec-dark{background:var(--bg-dark);color:var(--ink-on-
 .f-group input:focus,.f-group select:focus,.f-group textarea:focus{outline:none;border-color:var(--flame);box-shadow:0 0 0 3px var(--flame-glow)}
 .f-group textarea{resize:vertical;min-height:100px}
 .f-submit{margin-top:.8rem;width:100%;justify-content:center}
+.f-group input.error,.f-group select.error,.f-group textarea.error{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.form-error-msg{font-size:.78rem;color:var(--red);margin-top:.2rem;display:none}
+.form-error-msg.show{display:block}
 .f-consent{font-size:.76rem;color:var(--ink-muted);margin-top:.7rem;line-height:1.55}
 .f-consent a{color:var(--flame);text-decoration:underline}
 footer{background:var(--bg-dark);color:var(--ink-on-dark);padding:3.5rem 0 1.5rem}
@@ -350,21 +353,21 @@ footer{background:var(--bg-dark);color:var(--ink-on-dark);padding:3.5rem 0 1.5re
         <div class="c-method"><span class="ic">🕐</span><div><span class="lab">Disponibilité</span><span class="val">Lun — Ven · 8h — 18h</span></div></div>
         <div class="c-method"><span class="ic">⏱️</span><div><span class="lab">Temps de réponse</span><span class="val">Sous 24h ouvrées garanti</span></div></div>
       </div>
-      <form class="c-form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+      <div class="c-form" id="contact-form">
         <h3>Envoyer une demande</h3>
         <div class="f-row">
-          <div class="f-group"><label for="c-name">Nom / Société *</label><input type="text" id="c-name" name="name" required placeholder="Votre nom ou raison sociale"/></div>
-          <div class="f-group"><label for="c-email">Email professionnel *</label><input type="email" id="c-email" name="email" required placeholder="vous@entreprise.fr"/></div>
+          <div class="f-group"><label for="c-name">Nom / Société *</label><input type="text" id="c-name" required placeholder="Votre nom ou raison sociale"/></div>
+          <div class="f-group"><label for="c-email">Email professionnel *</label><input type="email" id="c-email" required placeholder="vous@entreprise.fr"/></div>
         </div>
         <div class="f-row">
-          <div class="f-group"><label for="c-tel">Téléphone</label><input type="tel" id="c-tel" name="phone" placeholder="06 00 00 00 00"/></div>
-          <div class="f-group"><label for="c-obj">Objet *</label><select id="c-obj" name="subject" required><option value="">— Sélectionnez —</option><option value="audit">Audit de sécurité incendie</option><option value="conformite">Mise en conformité</option><option value="commission">Préparation commission</option><option value="registre">Registre & documentation</option><option value="formation">Formation du personnel</option><option value="suivi">Suivi périodique</option><option value="devis">Demande de devis</option><option value="autre">Autre</option></select></div>
+          <div class="f-group"><label for="c-tel">Téléphone</label><input type="tel" id="c-tel" placeholder="06 00 00 00 00"/></div>
+          <div class="f-group"><label for="c-obj">Objet *</label><select id="c-obj" required><option value="">— Sélectionnez —</option><option value="Audit de sécurité incendie">Audit de sécurité incendie</option><option value="Mise en conformité">Mise en conformité</option><option value="Préparation commission">Préparation commission</option><option value="Registre et documentation">Registre & documentation</option><option value="Formation du personnel">Formation du personnel</option><option value="Suivi périodique">Suivi périodique</option><option value="Demande de devis">Demande de devis</option><option value="Autre demande">Autre</option></select></div>
         </div>
-        <div class="f-group full"><label for="c-type">Type d'établissement</label><select id="c-type" name="type_erp"><option value="">— Facultatif —</option><option value="hotel">Hôtel / Hébergement</option><option value="restaurant">Restaurant / Bar</option><option value="commerce">Commerce</option><option value="medical">Cabinet médical</option><option value="bureau">Bureau / Salle de réunion</option><option value="autre">Autre</option></select></div>
-        <div class="f-group full"><label for="c-msg">Votre message *</label><textarea id="c-msg" name="message" required placeholder="Décrivez votre établissement et votre besoin..."></textarea></div>
-        <button type="submit" class="btn btn-flame f-submit">Envoyer ma demande →</button>
-        <p class="f-consent">En soumettant ce formulaire, vous acceptez que vos données soient traitées conformément à notre <a href="#" onclick="document.getElementById('m-priv').classList.add('on');return false">politique de confidentialité</a>. Aucune donnée transmise à des tiers.</p>
-      </form>
+        <div class="f-group full"><label for="c-type">Type d'établissement</label><select id="c-type"><option value="">— Facultatif —</option><option value="Hôtel / Hébergement">Hôtel / Hébergement</option><option value="Restaurant / Bar">Restaurant / Bar</option><option value="Commerce">Commerce</option><option value="Cabinet médical">Cabinet médical</option><option value="Bureau / Salle de réunion">Bureau / Salle de réunion</option><option value="Autre">Autre</option></select></div>
+        <div class="f-group full"><label for="c-msg">Votre message *</label><textarea id="c-msg" required placeholder="Décrivez votre établissement et votre besoin..."></textarea></div>
+        <button type="button" class="btn btn-flame f-submit" onclick="envoyerDemande()">Envoyer ma demande →</button>
+        <p class="f-consent">Ce formulaire ouvre votre messagerie avec les informations pré-remplies. Vos données restent sur votre appareil — aucun serveur tiers impliqué. <a href="#" onclick="document.getElementById('m-priv').classList.add('on');return false">Politique de confidentialité</a>.</p>
+      </div>
     </div>
   </div></section>
 
@@ -399,19 +402,78 @@ footer{background:var(--bg-dark);color:var(--ink-on-dark);padding:3.5rem 0 1.5re
   <button class="mdl-x" onclick="this.closest('.overlay').classList.remove('on')" aria-label="Fermer">×</button>
   <h2>Politique de confidentialité</h2>
   <h3>Responsable du traitement</h3><p>IGNITECH Conseil — SIREN 895 023 505 — contact@ignitech-conseil.fr</p>
-  <h3>Données collectées</h3><p>Via le formulaire : nom/société, email, téléphone (facultatif), type d'établissement (facultatif), objet et message. Finalité exclusive : répondre à votre demande.</p>
-  <h3>Base légale</h3><p>Consentement (article 6.1.a du RGPD), exprimé lors de la soumission du formulaire.</p>
-  <h3>Destinataires</h3><p>Données destinées exclusivement à IGNITECH Conseil. Aucune cession à des tiers.</p>
-  <h3>Durée de conservation</h3><p>Maximum 3 ans à compter du dernier contact.</p>
+  <h3>Données collectées</h3><p>Le formulaire de contact de ce site n'envoie aucune donnée à un serveur. Il ouvre votre client de messagerie (Outlook, Gmail, Thunderbird, etc.) avec un email pré-rempli à destination de contact@ignitech-conseil.fr. Vos données ne transitent par aucun serveur tiers et ne sont stockées nulle part avant que vous ne cliquiez sur « Envoyer » dans votre messagerie.</p>
+  <h3>Base légale</h3><p>L'envoi de l'email est une action volontaire de votre part via votre propre client de messagerie. Aucun traitement automatisé n'est effectué par ce site.</p>
+  <h3>Destinataires</h3><p>Les messages reçus par email sont traités exclusivement par IGNITECH Conseil. Aucune cession à des tiers.</p>
+  <h3>Durée de conservation</h3><p>Les emails reçus sont conservés dans la boîte mail d'IGNITECH Conseil le temps nécessaire au traitement de votre demande, et au maximum 3 ans.</p>
   <h3>Vos droits</h3><p>Accès, rectification, effacement, portabilité et opposition : contact@ignitech-conseil.fr</p>
   <h3>Cookies</h3><p>Ce site n'utilise aucun cookie de suivi ni outil d'analytics. Aucune donnée de navigation collectée.</p>
 </div></div>
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+// Scroll reveal
 if('IntersectionObserver' in window){const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');io.unobserve(el.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
+
+// Mobile menu
 document.querySelectorAll('.nav-menu a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-menu').classList.remove('open')));
+
+// Modal escape
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.overlay.on').forEach(m=>m.classList.remove('on'))});
+
+// Form → mailto
+function envoyerDemande() {
+  const nom = document.getElementById('c-name');
+  const email = document.getElementById('c-email');
+  const tel = document.getElementById('c-tel');
+  const objet = document.getElementById('c-obj');
+  const typeErp = document.getElementById('c-type');
+  const msg = document.getElementById('c-msg');
+
+  // Reset errors
+  [nom, email, objet, msg].forEach(el => el.classList.remove('error'));
+
+  // Validate
+  let valid = true;
+  if (!nom.value.trim()) { nom.classList.add('error'); valid = false; }
+  if (!email.value.trim() || !email.value.includes('@')) { email.classList.add('error'); valid = false; }
+  if (!objet.value) { objet.classList.add('error'); valid = false; }
+  if (!msg.value.trim()) { msg.classList.add('error'); valid = false; }
+
+  if (!valid) {
+    // Scroll to first error
+    document.querySelector('.error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  // Build email
+  const sujet = encodeURIComponent('IGNITECH — ' + objet.value + (typeErp.value ? ' (' + typeErp.value + ')' : ''));
+  const corps = encodeURIComponent(
+    'Bonjour,\n\n' +
+    '— Demande via ignitech-conseil.fr —\n\n' +
+    'Nom / Société : ' + nom.value.trim() + '\n' +
+    'Email : ' + email.value.trim() + '\n' +
+    (tel.value.trim() ? 'Téléphone : ' + tel.value.trim() + '\n' : '') +
+    'Objet : ' + objet.value + '\n' +
+    (typeErp.value ? 'Type d\'établissement : ' + typeErp.value + '\n' : '') +
+    '\nMessage :\n' + msg.value.trim() + '\n\n' +
+    '---\nEnvoyé depuis le formulaire ignitech-conseil.fr'
+  );
+
+  // Open mail client
+  window.location.href = 'mailto:contact@ignitech-conseil.fr?subject=' + sujet + '&body=' + corps;
+
+  // Show confirmation
+  const form = document.getElementById('contact-form');
+  form.innerHTML = '<div style="text-align:center;padding:3rem 1rem">' +
+    '<div style="font-size:2.5rem;margin-bottom:1rem">✅</div>' +
+    '<h3 style="font:400 1.2rem var(--serif);color:var(--ink);margin-bottom:.7rem">Votre messagerie s\'est ouverte</h3>' +
+    '<p style="color:var(--ink-soft);font-size:.92rem;max-width:42ch;margin:0 auto .5rem">Cliquez sur <strong>Envoyer</strong> dans votre client mail pour finaliser votre demande. Nous vous répondrons sous 24h ouvrées.</p>' +
+    '<p style="color:var(--ink-muted);font-size:.82rem;margin-top:1.2rem">Votre messagerie ne s\'est pas ouverte ? Écrivez-nous directement à <a href="mailto:contact@ignitech-conseil.fr" style="color:var(--flame);text-decoration:underline">contact@ignitech-conseil.fr</a></p>' +
+    '<button class="btn btn-outline" style="margin-top:1.5rem" onclick="location.reload()">Nouvelle demande</button>' +
+    '</div>';
+}
 </script>
 </body>
 </html>
